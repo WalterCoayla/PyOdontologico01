@@ -13,3 +13,9 @@ git push -u origin main
 git remote add origin https://github.com/WalterCoayla/PyOdontologico.git
 git branch -M main
 git push -u origin main
+
+
+git remote rm origin
+git remote set-url origin https://github.com/WalterCoayla/PyOdontologico01.git
+
+git remote add origin https://github.com/WalterCoayla/PyOdontologico01.git
