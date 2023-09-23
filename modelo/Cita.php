@@ -10,6 +10,7 @@ class Cita extends Modelo{
 
 
     private $_tabla = 'citas';
+    private $_vista = 'v_cita';
 
     public function __construct($id=null, $fecha=null
                                 , $paciente=null, $obs = null 
@@ -57,8 +58,8 @@ class Cita extends Modelo{
     }
     public function getCitas(){
         $hoy = getdate();
-        $sql = "Select * from ". $this->_tabla 
-            . " where fecha > ".$hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+        $sql = "Select * from ". $this->_vista 
+            . " where fecha > '".$hoy['year']."-".$hoy['mon']."-".$hoy['mday']."'";
         # var_dump($sql);exit;
         $this->_sql->setSQL($sql);
 
