@@ -48,4 +48,46 @@ class CtrlCita extends Controlador
         $this->index();
 
     }
+    public function nuevo(){
+        $this->mostrar('citas/formularioCita.php');
+    }
+
+    public function guardar(){
+        $fecha = $_POST['fecharec'] . " ".$_POST['hora'];
+        # var_dump($fecha); exit;
+        $obj = new Cita (
+                null, $fecha,
+                $_SESSION['id'], $_POST['evento']);
+        $obj->nuevo();
+        
+        $this->citasPorPaciente();
+    }
+    public function citasPorPaciente(){
+        if (isset($_SESSION['id'])){    # Si se ha LOGUEADO
+
+            $obj = new Cita;
+            $respuesta = $obj->listarPorPaciente($_SESSION['id']);
+            
+            
+            $msg = $respuesta['msg'];
+        # var_dump($respuesta);exit;
+        $datos = [
+                'titulo'=>"Mis Citas",
+                'data'=>$respuesta['data']
+            ];
+        $contenido=$this->mostrar('citas/listarCitas.php',$datos,true);
+        $data = [
+            'titulo'=>'Mis Citas',
+            'contenido'=>$contenido,
+            'msg'=>$msg
+        ];
+
+        $this->mostrar('template.php',$data);
+
+
+        }else{
+            echo "No te has registrado";
+        }
+
+    }
 }

@@ -10,9 +10,17 @@ class CtrlPersona extends Controlador{
     public function guardar(){
         $id=$_POST['id'];
         $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $dni=$_POST['dni'];
+        $direccion=$_POST['direccion'];
+        $fechanac=$_POST['fechanac'];
+        $telefono=$_POST['telefono'];
+        $correo=$_POST['correo'];
+        $usuario=$_POST['usuario'];
+        $clave=$_POST['clave'];
         
-        $obj= new Estado($id, $nombre);
-
+        $obj= new Persona($id, $nombre, $apellido,$dni,$direccion,$fechanac,$telefono,$correo,$usuario,$clave);
+         #var_dump($obj);
         if ($id==''){
             $respuesta = $obj->nuevo();
         } else {    # Editar
@@ -20,6 +28,30 @@ class CtrlPersona extends Controlador{
         }
         
         $this->listar();
+    }
+    public function editar(){
+        
+        $id = $_GET['id'];
+        # echo "Editando....".$id;
+        $obj= new Persona($id);
+
+        $miObj = $obj->editar();
+        # var_dump($miObj);exit;
+        $datos = array(
+            'data'=>$miObj['data'][0]
+        );
+        # var_dump($datos);exit;
+        $this->mostrar('personas/formulario.php',$datos);
+    }
+    public function eliminar(){
+
+        $id = $_GET['id'];
+        $obj= new Persona($id);
+
+        $respuesta = $obj->eliminar();
+
+        $this->listar();
+
     }
     public function nuevo(){
         $this->mostrar('personas/formulario.php');
@@ -48,7 +80,7 @@ class CtrlPersona extends Controlador{
 
     }
     public function login(){
-        echo "Validando ingreso....";
+        # echo "Validando ingreso....";
         
         $obj= new Persona();
         $data = $obj->validarLogin($_POST['email'],$_POST['clave']);

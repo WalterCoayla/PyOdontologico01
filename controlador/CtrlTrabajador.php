@@ -2,6 +2,7 @@
 session_start();
 require_once './core/Controlador.php';
 require_once './modelo/Trabajador.php';
+# require_once './modelo/Persona.php';
 class CtrlTrabajador extends Controlador{
     public function index(){
         echo "Hola trabajador";
@@ -14,6 +15,8 @@ class CtrlTrabajador extends Controlador{
 
         if ($data['data']==null){
             # echo "Trabajador no encontrado";
+            # $obj= new Persona();
+
             $this->mostrarDashboardCliente();
 
         }else {
@@ -38,8 +41,9 @@ class CtrlTrabajador extends Controlador{
         # $contenido = $this->mostrar('plantilla/home.php','',true);
         $_SESSION['menu']=[
             
-            'CtrlCita'=>'Nueva Cita',
-            'CtrlHistoriaClinica'=>'Mis Citas',
+            # 'CtrlAgregarCita'=>'Nueva Cita',
+            'CtrlCita&accion=citasPorPaciente'=>'Mis Citas',
+            'CtrlCita'=>'Calendario',
             'CtrlServicios'=>'Otros Servicios',
         ];
         $data = [

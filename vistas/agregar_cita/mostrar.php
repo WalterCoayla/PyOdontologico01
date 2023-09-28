@@ -1,21 +1,18 @@
-<h1><?=$titulo?></h1>
+    <center><h1><?=$titulo?></h1></center>
 
-<a href="#" class="btn btn-success nuevo">
-    <i class="fa fa-plus-circle"></i> 
-    Insertar Nuevo
-</a>
-
-<table class="table table-striped table-hover">
+    <a href="#" class="btn btn-success nuevo">
+        <i class="fa fa-plus-circle"></i> 
+        Registrar nueva Cita
+    </a>
+    <h1>.</h1>
+    <table class="table table-striped table-hover">
         <tr>
             <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Dni</th>
-            <th>Direccion</th>
-            <th>Fecha de Nac</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>Pasword</th>
+            <th>Fecha de Citas</th>
+            <th>Paciente</th>
+            <th>Doctor</th>
+            <th>Detalle</th>
+            <th>Estado</th>
            
             <th colspan="2">Opciones</th>
         </tr>
@@ -23,24 +20,24 @@
         if (is_array($data))
         foreach ($data as $d) { ?>
         <tr>
-            <td><?=$d['idpersonas']?></td>
-            <td><?=$d['nombre']?></td>
-            <td><?=$d['apellido']?></td>
-            <td><?=$d['dni']?></td>
-            <td><?=$d['direccion']?></td>
-            <td><?=$d['fecha_nacimiento']?></td>
-            <td><?=$d['telefono']?></td> 
-            <td><?=$d['correo']?></td> 
-            <td><?=$d['clave']?></td>
+            <td><?=$d['idcitas']?></td>
+            <td><?=$d['fecha']?></td>
+            <td><?=$d['paciente_idpaciente']?></td>
+            <td><?=$d['personal_idpersonal']?></td>
+            <td><?=$d['observaciones']?></td>
+            <td><?=$d['idestados']?></td>
 
             <td>
-            <a data-id="<?=$d["idpersonas"]?>" class="editar" href="#">
+                <a data-id="<?=$d["idcitas"]?>" class="editar" href="#">
+                <i class="fas fa-download fa-sm text-white-50"></i> Descargar </a>
+            </td>
+            <!--<td>
+                <a data-id="<?=$d["idcitas"]?>" class="editar" href="#">
                     <i class="bi bi-pencil-square"></i> Editar </a>
                 / 
-                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="eliminar" href="#">
+                <a data-id="<?=$d["idcitas"]?>" data-nombre="<?=$d["paciente_idpaciente"]?>" class="eliminar" href="#">
                     <i class="bi bi-trash"></i> Eliminar </a>
-                </td>
-            </td>
+            </td>-->
             
         </tr>
     
@@ -52,7 +49,7 @@
     <br>
     <a href="?">Retornar</a>
 
-<!-- Modal Formulario - Nuevo / Editar -->
+    <!-- Modal Formulario - Nuevo / Editar -->
 <div class="modal fade" id="modal-form" role="dialog">
     <div class="modal-dialog">
  

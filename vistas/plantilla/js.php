@@ -141,7 +141,7 @@ $("#calendar").fullCalendar({
 
     locale: 'es',
     
-    defaultView: "agendaWeek",
+    defaultView: "month",
     navLinks: true, 
     editable: true,
     eventLimit: true, 

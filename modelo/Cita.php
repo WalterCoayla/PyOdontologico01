@@ -65,6 +65,13 @@ class Cita extends Modelo{
 
         return $this->_bd->ejecutar($this->_sql);
     }
-    
+    public function listarPorPaciente($idPaciente){
+        $sql = "Select * from ". $this->_vista 
+        . " where idpaciente = $idPaciente";
+
+        $this->_sql->setSQL($sql);
+        
+        return $this->ejecutarSql();
+    }
 
 }
