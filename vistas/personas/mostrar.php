@@ -2,7 +2,7 @@
 
 <a href="#" class="btn btn-success nuevo">
     <i class="fa fa-plus-circle"></i> 
-    Insertar Nuevo
+    Insertar Nuevooo
 </a>
 
 <table class="table table-striped table-hover">
