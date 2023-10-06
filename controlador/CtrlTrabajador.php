@@ -70,6 +70,7 @@ class CtrlTrabajador extends Controlador{
             default:    # Para el ADMINISTRADOR
                 $menu=[
                     # "CtrlPrincipal"=>"Inicio",
+                    "CtrlHistorias"=>"Historias clinicas",
                     "CtrlEstado"=>"Estados",
                     "CtrlPersona"=>"Personas",
                     "CtrlFormaPago"=>"Formas de Pago",
