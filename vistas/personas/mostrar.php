@@ -6,6 +6,7 @@
 </a>
 
 <table class="table table-striped table-hover">
+    <thead>
         <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -15,10 +16,12 @@
             <th>Fecha de Nac</th>
             <th>Telefono</th>
             <th>Correo</th>
-            <th>Pasword</th>
+            
            
             <th colspan="2">Opciones</th>
         </tr>
+    </thead>
+    <tbody>
     <?php
         if (is_array($data))
         foreach ($data as $d) { ?>
@@ -31,7 +34,7 @@
             <td><?=$d['fecha_nacimiento']?></td>
             <td><?=$d['telefono']?></td> 
             <td><?=$d['correo']?></td> 
-            <td><?=$d['clave']?></td>
+            
 
             <td>
             <a data-id="<?=$d["idpersonas"]?>" class="editar" href="#">
@@ -39,6 +42,10 @@
                 / 
                 <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="eliminar" href="#">
                     <i class="bi bi-trash"></i> Eliminar </a>
+                
+                / 
+                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="cambiarClave" href="#">
+                    <i class="bi bi-trash"></i> Restablecer Clave </a>
                 </td>
             </td>
             
@@ -46,7 +53,7 @@
     
     <?php    }
     ?>
-        
+    </tbody> 
 
     </table>
     <br>
@@ -63,7 +70,7 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" id="body-form">
-    
+            <p>Cargando...</p>
         </div>
         
      </div>
@@ -86,7 +93,7 @@
             </div>
             <div class="modal-footer justify-content-between">            
                 <button type="button" class="btn btn-secundary" data-dismiss="modal">Cancelar</button>
-                <a type="button" class="btn btn-danger" id="btn-confirmar" href="" data-id="">Eliminar</a>
+                <a type="button" class="btn btn-danger" id="btn-confirmar" href="" data-id="">Aceptar</a>
             </div>
         </div>
     </div>

@@ -11,6 +11,9 @@
      
    'use strict'
         let msg='<?=$msg['titulo']?>';
+        
+        toastr.success(msg)
+
         if(msg!=''){
             let icono = (msg=='Error')?'error':'success';
             $.toast({
@@ -33,7 +36,16 @@
 
                 $('table tbody tr').each(function(){
                     let nombres=$(this).children().eq(1);
-                    if (nombres.text().toUpperCase().includes(clave.toUpperCase())){
+                    let apellidos=$(this).children().eq(2);
+                    let dni=$(this).children().eq(3);
+                    if (
+                      nombres.text().toUpperCase().includes(clave.toUpperCase())
+                      ||
+                      apellidos.text().toUpperCase().includes(clave.toUpperCase())
+                      ||
+                      dni.text().toUpperCase().includes(clave.toUpperCase())
+
+                      ){
                         $(this).show();
                     }
                 });
@@ -61,6 +73,25 @@
                 alert("error");
             });
         });
+        $('#cambiarClave').click( function(e){ 
+          e.preventDefault();
+           // let linkNuevo=$(this).html();
+            // alert('Cambiando')
+            $(this).html('<i class="fa fa-spinner"></i> Cargando...');
+            $('.modal-title').html('Cambiar Clave');
+            $.ajax({
+                url:'index.php',
+                type:'get',
+                data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:''?>','accion':'showCambiarClave'}
+            }).done(function(datos){
+                // $('.nuevo').html(linkNuevo);
+                $('#body-form').html(datos);
+                $('#modal-form').modal('show');
+            }).fail(function(){
+                // $('.nuevo').html(linkNuevo);
+                alert("error");
+            });
+        });
         $('.editar').click( function(){ 
             var id= $(this).data('id');
             $('.modal-title').html('Editando el Reg.: '+id);
@@ -84,6 +115,19 @@
             $('.reg-eliminacion').html('Registro: <code>' + nombre +'</code>');
             
             $('#btn-confirmar').attr('href', '?ctrl=<?=isset($_GET['ctrl'])?$_GET['ctrl']:'';?>&accion=eliminar&id='+id);
+            
+            $('#modal-eliminar').modal('show');
+            
+        });
+        $('.cambiarClave').click( function(){ 
+            var id= $(this).data('id');
+            var nombre= $(this).data('nombre');
+           
+            $('.modal-title').html('<i class="fa fa-trash"></i> Restablecer clave');
+            
+            $('.reg-eliminacion').html('Registro: <code>' + nombre +'</code>');
+            
+            $('#btn-confirmar').attr('href', '?ctrl=<?=isset($_GET['ctrl'])?$_GET['ctrl']:'';?>&accion=restablecerClave&id='+id);
             
             $('#modal-eliminar').modal('show');
             

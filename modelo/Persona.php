@@ -37,30 +37,28 @@ class Persona extends Modelo{
     public function listar(){
         return $this->getAll();
     }
+    public function getOne(){
+        return $this->getBy('idpersonas',$this->_id);
+    }
     public function eliminar(){
         return $this->deleteBy('idpersonas',$this->_id);
     }
     public function nuevo(){
-        $datos = array(
-            "nombre"=>"'$this->_nombre'",
-            "apellido"=>"'$this->_apellido'",
-            "dni"=>"'$this->_dni'",
-            "direccion"=>"'$this->_direccion'",
-            "fecha_nacimiento"=>"'$this->_fechanac'",
-            "telefono"=>"'$this->_telefono'",
-            "correo"=>"'$this->_correo'",
-            "usuario"=>"'$this->_usuario'",
-            "clave"=>"'$this->_clave'",
-            "fecha_alta"=>"'$this->_fechaalta'",
-            "estados_idestados"=>"'$this->_estado'",
-            "idsexos"=>"'$this->_sexo'"
-        );
+        $datos =  $this->getDatos();
         #var_dump($datos);
         #echo $this->_sql;
         return $this->insert($datos);
     }
     public function editar(){
-        $datos = array(
+        $datos = $this->getDatos();
+        
+        $wh = "idpersonas = $this->_id";
+
+        return $this->update($wh, $datos);
+
+    }
+    private function getDatos(){
+        return array(
             "nombre"=>"'$this->_nombre'",
             "apellido"=>"'$this->_apellido'",
             "dni"=>"'$this->_dni'",
@@ -69,22 +67,43 @@ class Persona extends Modelo{
             "telefono"=>"'$this->_telefono'",
             "correo"=>"'$this->_correo'",
             "usuario"=>"'$this->_usuario'",
-            "clave"=>"'$this->_clave'",
+            "clave"=>"'".$this->encriptarClave($this->_clave)."'",
             "fecha_alta"=>"'$this->_fechaalta'",
             "estados_idestados"=>"'$this->_estado'",
             "idsexos"=>"'$this->_sexo'"
         );
-        
-        $wh = "idestados = $this->_id";
-
-        return $this->update($wh, $datos);
-
     }
     public function validarLogin($usuario, $clave){
+        $clave = $this->encriptarClave($clave);
         $this->_sql->addWhere("`correo`='$usuario'");
         $this->_sql->addWhere("`clave`='$clave'");
         # echo $this->_sql;exit;
         return $this->_bd->ejecutar($this->_sql);
+    }
+    public function restablecerClave(){
+        $clave = $this->encriptarClave('123456');
+        $datos = array(
+            "clave"=>"'$clave'",
+        );
+        
+        $wh = "idpersonas = $this->_id";
+
+        return $this->update($wh, $datos);
+    }
+    public function cambiarClave($clave){
+        $clave = $this->encriptarClave($clave);
+        $datos = array(
+            "clave"=>"'$clave'",
+        );
+        
+        $wh = "idpersonas = $this->_id";
+
+        return $this->update($wh, $datos);
+    }
+    private function encriptarClave($clave){
+        $miClave = substr(md5($clave),5,15).substr(md5($clave),2,10);
+
+        return $miClave;
     }
 
 }

@@ -34,11 +34,11 @@ class CtrlPersona extends Controlador{
         $id = $_GET['id'];
         # echo "Editando....".$id;
         $obj= new Persona($id);
-
-        $miObj = $obj->editar();
+        $miObj = $obj->getOne()['data'];
+        
         # var_dump($miObj);exit;
         $datos = array(
-            'data'=>$miObj['data'][0]
+            'data'=>$miObj[0]
         );
         # var_dump($datos);exit;
         $this->mostrar('personas/formulario.php',$datos);
@@ -99,6 +99,23 @@ class CtrlPersona extends Controlador{
     public function logout(){
         session_destroy();
         header('location: ?');
+
+    }
+    public function restablecerClave(){
+        $id = $_GET['id'];
+        $obj= new Persona($id);
+
+        $respuesta = $obj->restablecerClave();
+
+        $this->listar();
+    }
+    public function showCambiarClave(){
+        $this->mostrar('personas/cambiarClave.php');
+    }
+    public function cambiarClave(){
+        $clave = $_POST['clave'];
+        $obj = new Persona;
+        $data = $obj->cambiarClave($clave);
 
     }
 }

@@ -68,7 +68,7 @@ class MySQL implements ManejadorBDInterface
         return $retorno;
     }
 
-    private function _getMsg($titulo='',$cuerpo=null,$estado=0,$metodo='Desconocido')     {
+    private function _getMsg($titulo='Ejecución realizada',$cuerpo=null,$estado=0,$metodo='Desconocido')     {
         return array(
                 'titulo'=>strtoupper($titulo) , 
                 'cuerpo'=>$cuerpo,
