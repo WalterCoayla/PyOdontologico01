@@ -80,10 +80,11 @@ class CtrlPersona extends Controlador{
 
     }
     public function login(){
-        # echo "Validando ingreso....";
+        #echo "Validando ingreso....";
         
         $obj= new Persona();
         $data = $obj->validarLogin($_POST['email'],$_POST['clave']);
+        var_dump($data);
         if ($data['data']==null){
             echo "Usuario no encontrado";
         }else {

@@ -79,6 +79,7 @@ class CtrlTrabajador extends Controlador{
                     "CtrlEstado_dental"=>"Estado Dental",
                     "CtrlServicio"=>"Servicios Odontologicos",
                     "CtrlCita"=>"Agendar cita",
+                    "CtrlPerfil"=>"Perfil",
 
                     ];
                 break;

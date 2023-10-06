@@ -15,11 +15,16 @@
 
     <link rel="stylesheet" type="text/css" href="./assets/css/fullcalendar.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     --> 
     <link rel="stylesheet" href="./assets/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/jquery-toast.css">
+    <link rel="stylesheet" type="text/css" href="./assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/estiloPer/adminltee.min.css">
+
+
 
 
     <!-- Custom styles for this template-->
@@ -103,19 +108,21 @@
     <script src="./assets/js/jquery/jquery.min.js"></script>
     <script src="./assets/js/jq-toast.min.js"></script>
     <!-- Toastr -->
-<script src="./assets/toastr/toastr.min.js"></script>
+    <script src="./assets/toastr/toastr.min.js"></script>
 
     <script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/adminlte.js"></script>
+    <script src="./assets/js/demo.js"></script>
 
-<script type="text/javascript" src="./assets/js/moment.min.js"></script>	
-<script type="text/javascript" src="./assets/js/fullcalendar.min.js"></script>
-<script src='./assets/js/locales/es.js'></script>
+    <script type="text/javascript" src="./assets/js/moment.min.js"></script>	
+    <script type="text/javascript" src="./assets/js/fullcalendar.min.js"></script>
+    <script src='./assets/js/locales/es.js'></script>
 
 
 
-        <?php require_once './vistas/plantilla/js.php'; ?>
+    <?php require_once './vistas/plantilla/js.php'; ?>
     
 
 </body>
