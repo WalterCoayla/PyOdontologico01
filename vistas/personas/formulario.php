@@ -4,11 +4,11 @@
     $apellido = isset ($data['apellido'])?$data['apellido']:"";
     $dni = isset ($data['dni'])?$data['dni']:"";
     $direccion = isset ($data['direccion'])?$data['direccion']:"";
-    $fechanac = isset ($data['fechanac'])?$data['fechanac']:"";
+    $fechanac = isset ($data['fecha_nacimiento'])?$data['fecha_nacimiento']:"";
     $telefono = isset ($data['telefono'])?$data['telefono']:"";
     $correo = isset ($data['correo'])?$data['correo']:"";
     $usuario = isset ($data['usuario'])?$data['usuario']:"";
-    $clave = isset ($data['clave'])?$data['clave']:"";
+   /*  $clave = isset ($data['clave'])?$data['clave']:""; */
 
 $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
 
@@ -69,8 +69,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         </div>
         <div class="row">
             <div class="col">
-                Clave: 
-                <input class="form-control" type="text" name="clave" value="<?=$clave?>">
+                
             </div>
             <div class="col">
                 <br>

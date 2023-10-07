@@ -16,7 +16,9 @@ class Persona extends Modelo{
 
     private $_tabla = 'personas';
 
-    public function __construct($id=null, $nombre=null, $apellido=null,$dni=null,$direccion=null,$fechanac=null,$telefono=null,$correo=null,$usuario=null,$clave=null, $fechaalta=null, $estado=null,$sexo=null){
+    public function __construct($id=null, $nombre=null, $apellido=null,$dni=null
+                ,$direccion=null,$fechanac=null,$telefono=null,$correo=null
+                ,$usuario=null,$clave=null, $fechaalta=null, $estado=null,$sexo=null){
         $this->_id = $id;
         $this->_nombre = $nombre;
         $this->_apellido = $apellido;
@@ -45,7 +47,9 @@ class Persona extends Modelo{
     }
     public function nuevo(){
         $datos =  $this->getDatos();
-        #var_dump($datos);
+        $miClave=$this->encriptarClave('123456');
+        $datos+=["clave"=>"'$miClave'"];
+        # var_dump($datos);
         #echo $this->_sql;
         return $this->insert($datos);
     }
@@ -67,7 +71,7 @@ class Persona extends Modelo{
             "telefono"=>"'$this->_telefono'",
             "correo"=>"'$this->_correo'",
             "usuario"=>"'$this->_usuario'",
-            "clave"=>"'".$this->encriptarClave($this->_clave)."'",
+            /* "clave"=>"'".$this->encriptarClave($this->_clave)."'", */
             "fecha_alta"=>"'$this->_fechaalta'",
             "estados_idestados"=>"'$this->_estado'",
             "idsexos"=>"'$this->_sexo'"

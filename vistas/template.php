@@ -24,9 +24,6 @@
     <link rel="stylesheet" type="text/css" href="./assets/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/estiloPer/adminlte.min.css">
 
-
-
-
     <!-- Custom styles for this template-->
     <link href="./assets/css/sb-admin-2.min.css" rel="stylesheet">
 
