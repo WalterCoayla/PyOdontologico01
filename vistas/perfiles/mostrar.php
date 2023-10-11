@@ -69,10 +69,10 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Educación</strong>
+                <strong><i class="fas fa-book mr-1"></i> Telefono</strong>
 
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                  +51 
                 </p>
 
                 <hr>
@@ -97,7 +97,7 @@
 
                 <strong><i class="far fa-file-alt mr-1"></i> Notas</strong>
 
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                <p class="text-muted">Lorem ipsum dolor sit amet.</p>
               </div>
               <!-- /.card-body -->
             </div>
@@ -179,53 +179,6 @@
                     </div>
                     <!-- /.post -->
 
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="./assets/imagenes/img/user6-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Adam Jones</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Posted 5 photos - 5 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
-                          <img class="img-fluid" src="./assets/imagenes/img/photo1.png" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="./assets/imagenes/img/photo2.png" alt="Photo">
-                              <img class="img-fluid" src="./assets/imagenes/img/photo3.jpg" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="./assets/imagenes/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="./assets/imagenes/img/photo1.png" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <!-- /.row -->
-
-                      <p>
-                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-
-                      <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                    </div>
                     <!-- /.post -->
                   </div>
                   <!-- /.tab-pane -->
@@ -336,7 +289,7 @@
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Correo :</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Cambiar correo...">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Cambiar correo..." value="<?=$correo?>">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -388,20 +341,11 @@
     <!-- /.content -->
   </div>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
   <!-- /.control-sidebar -->
 </div>
 
 </body>
 </html>
-
-<a href="#" class="btn btn-success nuevo">
-    <i class="fa fa-plus-circle"></i> 
-    Insertar Nuevooo
-</a>
 
 <table class="table table-striped table-hover">
     <thead>
