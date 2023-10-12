@@ -16,7 +16,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
 
 ?>
     
-    <form action="?ctrl=CtrlPersona&accion=guardar" method="post">
+    <form action="?ctrl=CtrlPaciente&accion=guardar" method="post">
         id: <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por DNI..."
@@ -30,7 +30,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <div class="row">
             <div class="col">
                 Nombre: 
-                <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
+                <input class="form-control" type="text" name="nombre" value="<?=$nombre?>" required>
             </div>
             <div class="col">
                 Apellido: 
@@ -40,7 +40,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <div class="row">
             <div class="col">
                 Dni:
-                <input type="text" class="form-control" name="dni" value="<?=$dni?>">
+                <input type="text" class="form-control" name="dni" value="<?=$dni?>" required>
             </div>
             <div class="col">
                 Direccion: 
@@ -50,7 +50,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <div class="row">
             <div class="col">
                 Fecha Nac: 
-                <input class="form-control" type="Date" name="fechanac" value="<?=$fechanac?>">
+                <input class="form-control" type="Date" name="fechanac" value="<?=$fechanac?>" required>
             </div>
             <div class="col">
                 Nº Telefono: 
@@ -69,14 +69,18 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         </div>
         <div class="row">
             <div class="col">
-                
+            <br>    
+            Tipo <br>
+                <input type="radio" name="tipo" value='1' required> Niño <br>
+                <input type="radio" name="tipo" value='2' required> Adulto <br>
             </div>
             <div class="col">
                 <br>
+                
                 Sexo: <br>
-                <input type="radio" name="sexo"> Masculino <br>
-                <input type="radio" name="sexo"> Femenino <br>
-                <input type="radio" name="sexo"> Prefiero No Decirlo <br>
+                <input type="radio" name="sexo" value='1' required> Femenino <br>
+                <input type="radio" name="sexo" value='2' required> Masculino <br>
+                <input type="radio" name="sexo" value='3' required > Prefiero No Decirlo <br>
 
                 <!-- <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
