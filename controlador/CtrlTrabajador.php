@@ -74,6 +74,7 @@ class CtrlTrabajador extends Controlador{
                     "CtrlEstado"=>"Estados",
                     "CtrlPersona"=>"Personas",
                     "CtrlPaciente"=>"Pacientes",
+                    "CtrlPersonal"=>"Personal",
                     "CtrlFormaPago"=>"Formas de Pago",
                     "CtrlSexo"=>"Sexo",
                     "CtrlDiente"=>"Dientes",

@@ -50,3 +50,14 @@ from ( ( (
     )
 
 ----------------------------
+CREATE VIEW v_personal
+AS
+SELECT
+	personas.idpersonas,
+    personas.nombre,
+    personas.apellido,
+    personal.colegiatura,
+    tipo_personal.tipo
+FROM personal
+    INNER JOIN tipo_personal ON personal.idtipo = tipo_personal.idtipo
+    INNER JOIN personas on personal.idpersonas = personas.idpersonas
