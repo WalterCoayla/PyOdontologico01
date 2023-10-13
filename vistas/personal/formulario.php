@@ -2,12 +2,7 @@
     $id = isset ($data['idpersonas'])?$data['idpersonas']:"";
     $nombre = isset ($data['nombre'])?$data['nombre']:"";
     $apellido = isset ($data['apellido'])?$data['apellido']:"";
-    $dni = isset ($data['dni'])?$data['dni']:"";
-    $direccion = isset ($data['direccion'])?$data['direccion']:"";
-    $fechanac = isset ($data['fecha_nacimiento'])?$data['fecha_nacimiento']:"";
-    $telefono = isset ($data['telefono'])?$data['telefono']:"";
-    $correo = isset ($data['correo'])?$data['correo']:"";
-    $usuario = isset ($data['usuario'])?$data['usuario']:"";
+    $colegiatura = isset ($data['colegiatura'])?$data['colegiatura']:"";
    /*  $clave = isset ($data['clave'])?$data['clave']:""; */
 
 $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
@@ -16,7 +11,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
 
 ?>
     
-    <form action="?ctrl=CtrlPaciente&accion=guardar" method="post">
+    <form action="?ctrl=CtrlPersonal&accion=guardar" method="post">
         id: <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por DNI..."
@@ -39,18 +34,8 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         </div>
         <div class="row">
             <div class="col">
-                Dni:
-                <input type="text" class="form-control" name="dni" value="<?=$dni?>" required>
-            </div>
-            <div class="col">
-                Correo: 
-                <input class="form-control" type="text" name="correo" value="<?=$correo?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                Usuario: 
-                <input class="form-control" type="text" name="usuario" value="<?=$usuario?>">
+                Colegiatura:
+                <input type="text" class="form-control" name="dni" value="<?=$colegiatura?>" required>
             </div>
             <div class="col">
                 Cargo: <br>

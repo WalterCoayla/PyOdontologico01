@@ -30,13 +30,11 @@
             
 
             <td>
-            <a data-id="<?=$d["idpersonas"]?>" class="editar" href="#">
-                    <i class="bi bi-pencil-square"></i> Editar </a>
-                
-                
-                / 
-                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="cambiarClave" href="#">
-                    <i class="bi bi-trash"></i> Eliminar</a>
+                <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#" title="Editar" >
+                    <i class="fa-solid fa-pencil"></i></a>
+
+                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="btn btn-warning cambiarClave" href="#" title="Restablecer Clave">
+                    <i class="fa-solid fa-unlock"></i></a>
                 </td>
             </td>
             

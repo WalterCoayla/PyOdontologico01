@@ -13,7 +13,6 @@
             <th>Apellido</th>
             <th>Dni</th>
             <th>Direccion</th>
-            <th>Fecha de Nac</th>
             <th>Telefono</th>
             <th>Correo</th>
             
@@ -31,28 +30,26 @@
             <td><?=$d['apellido']?></td>
             <td><?=$d['dni']?></td>
             <td><?=$d['direccion']?></td>
-            <td><?=$d['fecha_nacimiento']?></td>
             <td><?=$d['telefono']?></td> 
             <td><?=$d['correo']?></td> 
             
 
             <td>
             <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#" title="Editar">
-                    <i class="fa fa-pencil-square-o"></i></a>
-                 
+                    <i class="fa-solid fa-pencil"></i></a>
                 <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="btn btn-danger eliminar" href="#" title="Eliminar">
                     <i class="fa fa-trash"></i></a>
                 
                 
                 <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" 
-                    class="btn btn-success cambiarClave" href="#" title="Restablecer Clave">
-                    <i class="fa fa-trash"></i> 
+                    class="btn btn-warning cambiarClave" href="#" title="Restablecer Clave">
+                    <i class="fa-solid fa-unlock"></i> 
                     
                 </a>
                  
                 <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?> <?=$d["apellido"]?>" 
-                    class="btn btn-success asignarCargo" href="#" title="Asignar Cargo">
-                    <i class="fa fa-trash"></i> 
+                    class="btn btn-primary asignarCargo" href="#" title="Asignar Cargo">
+                    <i class="fa-solid fa-bookmark"></i>
                     
                 </a>
                 </td>

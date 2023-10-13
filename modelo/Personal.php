@@ -7,7 +7,7 @@ class Personal extends Persona{
     private $_id;
     private $_tipo;
 
-    private $_tabla = 'paciente';
+    private $_tabla = 'personal';
     private $_vista = 'v_personal01';
 
     public function __construct($id=null, $nombre=null, $apellido=null,$dni=null

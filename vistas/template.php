@@ -17,8 +17,9 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    --> 
-    <link rel="stylesheet" href="./assets/fontawesome-free/css/all.min.css">
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./aassets/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/jquery-toast.css">
     <!-- <link rel="stylesheet" type="text/css" href="./assets/plugins/fontawesome-free/css/all.min.css"> -->

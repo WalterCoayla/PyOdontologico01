@@ -40,7 +40,7 @@ class CtrlPersonal extends Controlador{
         
         $id = $_GET['id'];
         # echo "Editando....".$id;
-        $obj= new Paciente($id);
+        $obj= new personal($id);
         $miObj = $obj->getOne()['data'];
         
         # var_dump($miObj);exit;
