@@ -37,15 +37,24 @@
             
 
             <td>
-            <a data-id="<?=$d["idpersonas"]?>" class="editar" href="#">
-                    <i class="bi bi-pencil-square"></i> Editar </a>
-                / 
-                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="eliminar" href="#">
-                    <i class="bi bi-trash"></i> Eliminar </a>
+            <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#" title="Editar">
+                    <i class="fa fa-pencil-square-o"></i></a>
+                 
+                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="btn btn-danger eliminar" href="#" title="Eliminar">
+                    <i class="fa fa-trash"></i></a>
                 
-                / 
-                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="cambiarClave" href="#">
-                    <i class="bi bi-trash"></i> Restablecer Clave </a>
+                
+                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" 
+                    class="btn btn-success cambiarClave" href="#" title="Restablecer Clave">
+                    <i class="fa fa-trash"></i> 
+                    
+                </a>
+                 
+                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?> <?=$d["apellido"]?>" 
+                    class="btn btn-success asignarCargo" href="#" title="Asignar Cargo">
+                    <i class="fa fa-trash"></i> 
+                    
+                </a>
                 </td>
             </td>
             
@@ -59,7 +68,8 @@
     <br>
     <a href="?">Retornar</a>
 
-<!-- Modal Formulario - Nuevo / Editar -->
+
+    <!-- Modal Formulario - Nuevo / Editar -->
 <div class="modal fade" id="modal-form" role="dialog">
     <div class="modal-dialog">
  
@@ -98,3 +108,5 @@
         </div>
     </div>
 </div>
+
+

@@ -73,6 +73,31 @@
                 alert("error");
             });
         });
+        $('.asignarCargo').click( function(e){ 
+          e.preventDefault();
+           let linkNuevo=$(this).html();
+            // alert('Cambiando')
+            var id= $(this).data('id');
+            var nombre= $(this).data('nombre');
+
+            $(this).html('<i class="fa fa-spinner"></i> Cargando...');
+
+            $('.modal-title').html('Cargo para: '+nombre);
+            $.ajax({
+                url:'index.php',
+                type:'get',
+                data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:''?>','accion':'asignarCargo','id':id}
+            }).done(function(datos){
+                $(this).html(linkNuevo)
+                $('#body-form').html(datos);
+
+                $('#modal-form').modal('show');
+            }).fail(function(){
+                $(this).html(linkNuevo)
+                alert("error");
+            });
+            $(this).html(linkNuevo)
+        });
         $('#cambiarClave').click( function(e){ 
           e.preventDefault();
            // let linkNuevo=$(this).html();

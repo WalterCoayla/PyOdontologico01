@@ -64,5 +64,28 @@ class Personal extends Persona{
         return $this->update($wh,$datos);
 
     }
+    public function guardarCargo($cargo, $colegiatura){
+        $this->setTabla('personal');
+        # Busco si existe
+        $obj=$this->getBy('idpersonas',$this->_id)['data'];
+        # var_dump($obj);exit;
+        if (is_null($obj)){ #No existe y hay que INSERTARLO
+            $datos = [
+                'idpersonas'=>$this->_id,
+                'colegiatura'=>"'$colegiatura'",
+                'idtipo'=>"$cargo",
+            ];
+            
+            return $this->insert($datos);
+        } else {    # Existe y hay que ACTUALIZARLO
+            $datos = [
+                'colegiatura'=>"'$colegiatura'",
+                'idtipo'=>"$cargo",
+            ];
+            $wh = "idpersonas=$this->_id";
+            return $this->update($wh,$datos);
+        }
+        
+    }
     
 }

@@ -115,10 +115,28 @@ class CtrlPersona extends Controlador{
     public function showCambiarClave(){
         $this->mostrar('personas/cambiarClave.php');
     }
+    
     public function cambiarClave(){
         $clave = $_POST['clave'];
         $obj = new Persona;
         $data = $obj->cambiarClave($clave);
 
+    }
+    public function asignarCargo(){
+        $id = $_GET['id'];
+        $datos = [
+            'id'=>$id
+        ];
+        $this->mostrar('personas/asignarCargo.php',$datos);
+    }
+    public function guardarCargo(){
+        require_once './modelo/Personal.php';
+        $id = $_POST['id'];
+        $cargo = $_POST['cargo'];
+        $colegiatura = $_POST['colegiatura'];
+        $obj = new Personal($id);
+        $obj->guardarCargo($cargo,$colegiatura);
+        
+        $this->listar();
     }
 }

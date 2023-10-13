@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./assets/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/jquery-toast.css">
-    <link rel="stylesheet" type="text/css" href="./assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/plugins/fontawesome-free/css/all.min.css"> -->
     <link rel="stylesheet" type="text/css" href="./assets/css/estiloPer/aadminlte.min.css">
 
     <!-- Custom styles for this template-->
@@ -77,29 +77,32 @@
                     </button>
                 </div>
                 <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="?ctrl=CtrlPersona&accion=logout">Cerrar Sesión</a>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-primary" href="?ctrl=CtrlPersona&accion=logout">Cerrar Sesión</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="modal-cambiar" role="dialog">
-    <div class="modal-dialog">
- 
-     <!-- Modal content-->
-     <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title"></h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="body-form">
+                    <p>Cargando...</p>
+                </div>
+                
+            </div>
         </div>
-        <div class="modal-body" id="body-form">
-            <p>Cargando...</p>
-        </div>
-        
-     </div>
     </div>
-</div>
+
     
     <!-- Bootstrap core JavaScript-->
     <script src="./assets/js/jquery/jquery.min.js"></script>

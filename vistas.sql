@@ -50,7 +50,7 @@ from ( ( (
     )
 
 ----------------------------
-CREATE VIEW v_personal
+CREATE VIEW v_personal01
 AS
 SELECT
 	personas.idpersonas,
