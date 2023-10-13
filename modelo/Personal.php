@@ -37,7 +37,7 @@ class Personal extends Persona{
         $this->setTabla($this->_tabla);
         $this->deleteBy('idpersonas',$this->_id);
         # var_dump($this->_tabla);exit;
-        $this->setTabla('personas');
+        $this->setTabla('personal');
         parent::eliminar();
 
     }

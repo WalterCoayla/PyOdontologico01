@@ -74,9 +74,9 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
             <div class="col">
                 <br>
                 Sexo: <br>
-                <input type="radio" name="sexo"> Masculino <br>
-                <input type="radio" name="sexo"> Femenino <br>
-                <input type="radio" name="sexo"> Prefiero No Decirlo <br>
+                <input type="radio" name="sexos" value='1' required> Masculino <br>
+                <input type="radio" name="sexos" value='2' required> Femenino <br>
+                <input type="radio" name="sexos" value='3' required> Prefiero No Decirlo <br>
 
                 <!-- <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">

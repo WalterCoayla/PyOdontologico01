@@ -53,7 +53,7 @@ class CtrlPersonal extends Controlador{
     public function eliminar(){
 
         $id = $_GET['id'];
-        $obj= new Paciente($id);
+        $obj= new Personal($id);
 
         $respuesta = $obj->eliminar();
 

@@ -17,11 +17,12 @@ class CtrlPersona extends Controlador{
         $telefono=$_POST['telefono'];
         $correo=$_POST['correo'];
         $usuario=$_POST['usuario'];
+        $sexo=$_POST['sexos'];
         /* $clave=$_POST['clave']; */
-        
+        #var_dump($sexo);exit;
         $obj= new Persona($id, $nombre, $apellido,$dni
-            ,$direccion,$fechanac,$telefono,$correo,$usuario);
-         #var_dump($obj);
+            ,$direccion,$fechanac,$telefono,$correo,$usuario,$sexo);
+        #var_dump($obj); exit;
         if ($id==''){
             $respuesta = $obj->nuevo();
             

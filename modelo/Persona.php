@@ -10,16 +10,17 @@ class Persona extends Modelo{
     private $_telefono;
     private $_correo;
     private $_usuario; 
+    private $_clave;
     private $_fechaalta;
     private $_estado;
-    private $_clave;
+    private $_sexo;
     protected $idSiguiente;
 
     private $_tabla = 'personas';
 
     public function __construct($id=null, $nombre=null, $apellido=null,$dni=null
                 ,$direccion=null,$fechanac=null,$telefono=null,$correo=null
-                ,$usuario=null,$clave=null, $fechaalta=null, $estado='2',$sexo=null){
+                ,$usuario=null,$clave=null, $fechaalta=null, $estado='2',$sexo='3'){
         $this->_id = $id;
         $this->_nombre = $nombre;
         $this->_apellido = $apellido;
@@ -33,7 +34,7 @@ class Persona extends Modelo{
         $this->_fechaalta = date("d-m-Y h:i:s");
         $this->_estado = $estado;
         $this->_sexo = $sexo;
-
+        #var_dump ($sexo,$nombre);exit;
         parent::__construct($this->_tabla);
 
     }
