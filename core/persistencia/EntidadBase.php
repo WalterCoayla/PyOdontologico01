@@ -62,14 +62,14 @@ class EntidadBase
         $this->_sql->addWhere($wh);
         $this->_sql->setDatos($datos);
         $this->_sql->setComando("UPDATE");
-        # echo $this->_sql;exit;
+        #echo $this->_sql;exit;
         return $this->_bd->ejecutar($this->_sql);
     }
     public function insert($datos){
         $this->_sql->setTabla($this->_tabla);
         $this->_sql->setDatos($datos);
         $this->_sql->setComando("INSERT");
-        # echo $this->_sql;exit();
+        #echo $this->_sql;exit();
         return $this->_bd->ejecutar($this->_sql);
     } 
  

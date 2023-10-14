@@ -27,7 +27,10 @@
 
     <!-- Custom styles for this template-->
     <link href="./assets/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <!--Link de Odontograma
+    <link href="./assets/css/base.css" rel="stylesheet">
+    <link href="./assets/tools/bootstrapp/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
 </head>
 
 <body id="page-top">
@@ -120,6 +123,10 @@
     <script type="text/javascript" src="./assets/js/moment.min.js"></script>	
     <script type="text/javascript" src="./assets/js/fullcalendar.min.js"></script>
     <script src='./assets/js/locales/es.js'></script>
+
+    <!--Script Odontograma
+    <script src='./assets/tools/bootstrap/bootstrap.js'></script>
+    <script src='./assets/jquery-1.10.2.min.js'></script>-->
 
 
 

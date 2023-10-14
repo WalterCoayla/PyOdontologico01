@@ -3,14 +3,14 @@ require_once './core/Modelo.php';
 class Diente extends Modelo{
     private $_id;
     private $_ubicacion;
-    private $_estado;
+    private $_nombre;
 
     private $_tabla = 'dientes';
 
-    public function __construct($id=null, $ubicacion=null, $estado=null){
+    public function __construct($id=null, $ubicacion=null, $nombre=null){
         $this->_id = $id;
-        $this->_estado = $estado;
         $this->_ubicacion = $ubicacion;
+        $this->_nombre = $nombre;
 
         parent::__construct($this->_tabla);
 
@@ -28,16 +28,17 @@ class Diente extends Modelo{
     public function nuevo(){
         $datos = array(
             "ubicacion"=>"'$this->_ubicacion'",
-            "nombre"=>"'$this->_estado'"
+            "nombre"=>"'$this->_nombre'"
         );
         return $this->insert($datos);
     }
     public function editar(){
         $datos = array(
-            "nombre"=>"'$this->_estado'"
+            "ubicacion"=>"'$this->_ubicacion'",
+            "nombre"=>"'$this->_nombre'"
         );
         
-        $wh = "idestados = $this->_id";
+        $wh = "iddientes = $this->_id";
 
         return $this->update($wh, $datos);
 

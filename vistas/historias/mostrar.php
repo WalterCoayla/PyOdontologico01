@@ -42,14 +42,17 @@
 
 
         <td>
-            <a data-id="<?=$d["idhistorias_clinicas"]?>" class="editar" href="#">
-                <i class="bi bi-pencil-square"></i> Editar </a>
-            / 
-            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nombre"]?>" class="eliminar" href="#">
-                <i class="bi bi-trash"></i> Eliminar </a>
-            /
-            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nombre"]?>" class="eliminar" href="#">
-                <i class="bi bi-trash"></i> Enviar </a>
+            <a data-id="<?=$d["idhistorias_clinicas"]?>" class=" btn btn-success editar" href="#" title="Editar">
+                <i class="fa-solid fa-pencil"></i>
+            </a>
+
+            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nombre"]?>" class=" btn btn-danger eliminar" href="#" title="Eliminar">
+                <i class="fa fa-trash"></i>
+            </a>
+        
+            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nombre"]?>" class="btn btn-primary enviar" href="#" title="Enviar Al Correo">
+                <i class="fa-regular fa-share-from-square"></i>
+            </a>
             </td>
         
     </tr>

@@ -61,3 +61,17 @@ SELECT
 FROM personal
     INNER JOIN tipo_personal ON personal.idtipo = tipo_personal.idtipo
     INNER JOIN personas on personal.idpersonas = personas.idpersonas
+-------------------------------
+CREATE VIEW v_historiasClinicas
+AS
+SELECT
+	historias_clinicas.idhistorias_clinicas,
+    historias_clinicas.fecha,
+    historias_clinicas.observaciones,
+    personas.nombre,
+    personas.apellido,
+    v_personal01.apellido,
+    v_personal01.colegiatura
+FROM historias_clinicas
+    INNER JOIN personas ON historias_clinicas.idpersonas = personas.idpersonas
+    INNER JOIN v_personal01 ON historias_clinicas.idpersonas1 = v_personal01.idpersonas

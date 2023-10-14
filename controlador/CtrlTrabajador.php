@@ -71,6 +71,7 @@ class CtrlTrabajador extends Controlador{
                 $menu=[
                     # "CtrlPrincipal"=>"Inicio",
                     "CtrlHistorias"=>"Historias clinicas",
+                    "CtrlOdontograma"=>"Odontogramas",
                     "CtrlEstado"=>"Estados",
                     "CtrlPersona"=>"Personas",
                     "CtrlPaciente"=>"Pacientes",

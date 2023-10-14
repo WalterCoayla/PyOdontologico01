@@ -1,7 +1,7 @@
 <?php
-$id = isset ($data['iddiente'])?$data['iddiente']:"";
+$id = isset ($data['iddientes'])?$data['iddientes']:"";
 $ubicacion = isset ($data['ubicacion'])?$data['ubicacion']:"";
-$diente = isset ($data['nombre'])?$data['nombre']:"";
+$nombre = isset ($data['nombre'])?$data['nombre']:"";
 
 $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
 
@@ -9,12 +9,12 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
 
 ?>
     
-    <form action="?ctrl=CtrlDiente&accion=guardar" method="post">
+    <form action="?ctrl=CtrlDiente&accion=guardar" method="POST">
         id: <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
         <br>
         Ubicacion: <input class="form-control" type="text" name="ubicacion" value="<?=$ubicacion?>">
         <br>
-        Nombre: <input class="form-control" type="text" name="nombre" value="<?=$diente?>">
+        Nombre: <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
         <br>
         <input class="form-control btn btn-success" type="submit" value="Guardar">
     </form>
