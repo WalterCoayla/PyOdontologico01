@@ -24,5 +24,5 @@ git remote add origin https://github.com/WalterCoayla/PyOdontologico01.git
 git branch + el nombre... para crear una rama
 git checkout + el nombre.... para moverse a esa rama
 git branch para ver en que estas posicionado 
-git merge + el nombre de la rama
+git merge + el nombre de la rama para unir trabajo
 git pull para refrescar el proyecto
