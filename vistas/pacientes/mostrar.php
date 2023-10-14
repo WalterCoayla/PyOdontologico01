@@ -46,7 +46,7 @@
                 
                 
                 / 
-                <a data-id="<?=$d["idpersonas"]?>" data-nombre="<?=$d["nombre"]?>" class="cambiarClave" href="#">
+                <a href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
                     <i class="bi bi-trash"></i> Ver Historia</a>
                 </td>
             </td>

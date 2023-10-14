@@ -62,16 +62,25 @@ FROM personal
     INNER JOIN tipo_personal ON personal.idtipo = tipo_personal.idtipo
     INNER JOIN personas on personal.idpersonas = personas.idpersonas
 -------------------------------
-CREATE VIEW v_historiasClinicas
-AS
+
+drop view v_historias_clinicas 
+--------------
+CREATE VIEW
+    v_historias_clinicas AS
 SELECT
-	historias_clinicas.idhistorias_clinicas,
-    historias_clinicas.fecha,
-    historias_clinicas.observaciones,
-    personas.nombre,
-    personas.apellido,
-    v_personal01.apellido,
-    v_personal01.colegiatura
-FROM historias_clinicas
-    INNER JOIN personas ON historias_clinicas.idpersonas = personas.idpersonas
-    INNER JOIN v_personal01 ON historias_clinicas.idpersonas1 = v_personal01.idpersonas
+    hc.*,
+    p.nombre as nomPaciente,
+    p.apellido as apePaciente,
+    p.dni,
+    p.direccion,
+    p.telefono,
+    p.fecha_nacimiento,
+    p.sexo,
+    p.tipo,
+    d.nombre as nomDoctor,
+    d.apellido as apeDoctor,
+    d.colegiatura
+FROM historias_clinicas hc
+    INNER JOIN v_pacientes p ON hc.idpaciente = p.idpersonas
+    INNER JOIN v_personal01 d ON hc.iddoctor = d.idpersonas
+------------///////////////////////////////

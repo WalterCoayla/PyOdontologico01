@@ -1,5 +1,7 @@
 <h1><?=$titulo?></h1>
 <?php require_once './vistas/plantilla/dashboard.php'; ?>
+
+<h1>Paciente: <?=$data[0]['nomPaciente']?> <?=$data[0]['apePaciente']?></h1>
 <a href="#" class="btn btn-success nuevo">
     <i class="fa fa-plus-circle"></i> 
     Nuevo Registro
@@ -22,10 +24,9 @@
     <tr>
         <th>Id</th>
         <th>Fecha de Atención</th>
+        <th>Atendido Por</th>
         <th>Observaciones</th>
-        <th>Dato del Paciente</th>
-        <th>Atendido Por.</th>
-        <th>Estado</th>
+        
 
         <th colspan="3"><center>Opciones</center></th>
     </tr>
@@ -35,22 +36,19 @@
     <tr>
         <td><?=$d['idhistorias_clinicas']?></td>
         <td><?=$d['fecha']?></td>
+        <td><?=$d['nomDoctor']?> <?=$d['apeDoctor']?></td>
         <td><?=$d['observaciones']?></td>
-        <td><?=$d['idpersonas']?></td>
-        <td><?=$d['idpersonas1']?></td>
-        <td>Pendiente</td>
-
 
         <td>
             <a data-id="<?=$d["idhistorias_clinicas"]?>" class=" btn btn-success editar" href="#" title="Editar">
                 <i class="fa-solid fa-pencil"></i>
             </a>
 
-            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nombre"]?>" class=" btn btn-danger eliminar" href="#" title="Eliminar">
+            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nomPaciente"]?>" class=" btn btn-danger eliminar" href="#" title="Eliminar">
                 <i class="fa fa-trash"></i>
             </a>
         
-            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nombre"]?>" class="btn btn-primary enviar" href="#" title="Enviar Al Correo">
+            <a data-id="<?=$d["idhistorias_clinicas"]?>" data-nombre="<?=$d["nomPaciente"]?>" class="btn btn-primary enviar" href="#" title="Enviar Al Correo">
                 <i class="fa-regular fa-share-from-square"></i>
             </a>
             </td>

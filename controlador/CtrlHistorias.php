@@ -2,10 +2,12 @@
 session_start();
 require_once './core/Controlador.php';
 require_once './modelo/Historias.php';
+
 class CtrlHistorias extends Controlador
 {
     public function index(){
-        $this->listar();
+        $id = isset($_GET['id'])?$_GET['id']:null;
+        $this->listar($id);
     }
     public function editar(){
         
@@ -51,11 +53,11 @@ class CtrlHistorias extends Controlador
 
     }
 
-    public function listar(){
+    public function listar($id){
 
         $obj= new Historias();
-
-        $respuesta = $obj->listar();
+        
+        $respuesta = $obj->listar($id);
 
         $msg = $respuesta['msg'];
         # var_dump($respuesta);exit;
