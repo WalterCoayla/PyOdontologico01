@@ -84,3 +84,16 @@ FROM historias_clinicas hc
     INNER JOIN v_pacientes p ON hc.idpaciente = p.idpersonas
     INNER JOIN v_personal01 d ON hc.iddoctor = d.idpersonas
 ------------///////////////////////////////
+CREATE VIEW v_cita01 AS
+SELECT
+    c.idcitas,
+    c.fecha,
+    c.observaciones,
+    pl.nombre as NomPersonal,
+    p.nombre as NomPaciente,
+    e.nombre as NomEstado,
+    addtime(fecha, '00:30:00') as fin
+FROM citas c 
+	INNER JOIN estados e ON c.idestados = e.idestados
+    INNER JOIN v_pacientes p ON c.idpaciente = p.idpersonas
+    INNER JOIN v_personal01 pl ON c.idpersonal = pl.idpersonas

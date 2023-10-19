@@ -51,10 +51,23 @@ class CtrlCita extends Controlador
     public function nuevo(){
         $this->mostrar('citas/formularioCita.php');
     }
+    public function editar(){
+        
+        $id = $_GET['id'];
+        # echo "Editando....".$id;
+        $obj= new Cita($id);
+        $miObj = $obj->getOne();
+        # var_dump($miObj);exit;
+        $datos = array(
+            'data'=>$miObj['data'][0]
+        );
+        # var_dump($datos);exit;
+        $this->mostrar('citas/formularioCita.php',$datos);
+    }
 
     public function guardar(){
         $fecha = $_POST['fecharec'] . " ".$_POST['hora'];
-        # var_dump($fecha); exit;
+        #var_dump($fecha); exit;
         $obj = new Cita (
                 null, $fecha,
                 $_SESSION['id'], $_POST['evento']);

@@ -67,74 +67,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Agenda</h6>
                                 </div>
                                 <div class="card-body">
-                                    <h1>hola soy mitwar</h1>
-                                    <div>
-                                        <table class="cbr00">
-                                            <td>
-                                                <tr>
-                                                    <input type="date" name="cl" id="fec"> 
-                                                </tr>
-                                                <tr>
-                                                    <input type="text" placeholder="Ingresa DNI....">
-                                                </tr>
-                                                <tr>
-                                                    <button class="b1">Buscar </button>
-                                                </tr>
-                                            </td>
-                                        </table>
-                                    </div>
-                                    <table class="table table-bordered">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">LUNES</th>
-                                            <th scope="col">MARTES</th>
-                                            <th scope="col">MIERCOLES</th>
-                                            <th scope="col">JUEVES</th>
-                                            <th scope="col">VIERNES</th>
-                                            <th scope="col">SABADO</th>
-                                            <th scope="col">DOMINGO</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    <!--<h4 class="small font-weight-bold">Configuracion de Cuenta <span
-                                            class="float-right">Agendas Registradas</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
-                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>-->
+                                    <h1>Informacion Sobre Nosotros:</h1>
                                 </div>
                             </div>
 

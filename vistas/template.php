@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/jquery-toast.css">
     <!-- <link rel="stylesheet" type="text/css" href="./assets/plugins/fontawesome-free/css/all.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/estiloPer/aadminlte.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/estiloPer/aadminlte.css">
 
     <!-- Custom styles for this template-->
     <link href="./assets/css/sb-admin-2.min.css" rel="stylesheet">

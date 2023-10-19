@@ -347,7 +347,7 @@
 </body>
 </html>
 
-<table class="table table-striped table-hover">
+
     <thead>
         <tr>
             <th>Id</th>

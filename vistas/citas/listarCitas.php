@@ -9,9 +9,10 @@
         <tr>
             <th>Id</th>
             <th>Fecha de Citas</th>
-            
             <th>Detalle</th>
             <th>Estado</th>
+            <th>Nombre Paciente</th>
+            <center><th>Atendido Por:</th></center>
            
             <th colspan="2">Opciones</th>
         </tr>
@@ -22,21 +23,18 @@
         <tr>
             <td><?=$i++?></td>
             <td><?=$d['fecha']?></td>
-            
             <td><?=$d['observaciones']?></td>
             <td><?=$d['idestados']?></td>
+            <td><?=$d['idpaciente']?></td>
+            <td><?=$d['idpersonal']?></td>
 
             <td>
-                <a data-id="<?=$d["idcitas"]?>" class="editar" href="#">
+                <a data-id="<?=$d["idcitas"]?>" class="btn btn-danger download" href="#">
                 <i class="fas fa-download fa-sm text-white-50"></i> Descargar </a>
+
+                <a data-id="<?=$d["idcitas"]?>" class="btn btn-success editar" href="#">
+                    <i class="fa-solid fa-pencil"></i> Editar </a>
             </td>
-            <!--<td>
-                <a data-id="<?=$d["idcitas"]?>" class="editar" href="#">
-                    <i class="bi bi-pencil-square"></i> Editar </a>
-                / 
-                <a data-id="<?=$d["idcitas"]?>" data-nombre="<?=$d["paciente_idpaciente"]?>" class="eliminar" href="#">
-                    <i class="bi bi-trash"></i> Eliminar </a>
-            </td>-->
             
         </tr>
     

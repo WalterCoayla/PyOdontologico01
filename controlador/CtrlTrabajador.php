@@ -42,9 +42,10 @@ class CtrlTrabajador extends Controlador{
         $_SESSION['menu']=[
             
             # 'CtrlAgregarCita'=>'Nueva Cita',
-            'CtrlCita&accion=citasPorPaciente'=>'Mis Citas',
-            'CtrlCita'=>'Calendario',
+            'CtrlCita&accion=citasPorPaciente'=>'Agendar Cita',
+            'CtrlCita'=>'Calendario de Citas',
             'CtrlServicios'=>'Otros Servicios',
+            'CtrlPerfil'=>'Configuracion de Perfil',
         ];
         $data = [
             
