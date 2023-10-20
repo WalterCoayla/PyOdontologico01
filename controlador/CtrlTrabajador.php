@@ -44,7 +44,7 @@ class CtrlTrabajador extends Controlador{
             # 'CtrlAgregarCita'=>'Nueva Cita',
             'CtrlCita&accion=citasPorPaciente'=>'Agendar Cita',
             'CtrlCita'=>'Calendario de Citas',
-            'CtrlServicios'=>'Otros Servicios',
+            'CtrlServicio'=>'Otros Servicios',
             'CtrlPerfil'=>'Configuracion de Perfil',
         ];
         $data = [
@@ -74,9 +74,9 @@ class CtrlTrabajador extends Controlador{
                     "CtrlHistorias"=>"Historias clinicas",
                     "CtrlOdontograma"=>"Odontogramas",
                     "CtrlEstado"=>"Estados",
-                    "CtrlPersona"=>"Personas",
-                    "CtrlPaciente"=>"Pacientes",
-                    "CtrlPersonal"=>"Personal",
+                    "CtrlPersona"=>"Registro Personas",
+                    "CtrlPaciente"=>"Aregar Paciente",
+                    "CtrlPersonal"=>"Registro de Personal",
                     "CtrlFormaPago"=>"Formas de Pago",
                     "CtrlSexo"=>"Sexo",
                     "CtrlDiente"=>"Dientes",

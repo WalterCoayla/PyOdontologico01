@@ -1,9 +1,9 @@
-    <h1><?=$titulo?></h1>
+<center><h1><?=$titulo?></h1></center>
 
-    <a href="#" class="btn btn-success nuevo">
+    <!--<a href="#" class="btn btn-success nuevo">
         <i class="fa fa-plus-circle"></i> 
         Insertar Nuevo
-    </a>
+    </a>-->
     
     <table class="table table-striped table-hover">
         <tr>

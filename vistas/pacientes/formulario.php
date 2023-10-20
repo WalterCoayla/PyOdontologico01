@@ -49,51 +49,10 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         </div>
         <div class="row">
             <div class="col">
-                Fecha Nac: 
-                <input class="form-control" type="Date" name="fechanac" value="<?=$fechanac?>" required>
-            </div>
-            <div class="col">
-                Nº Telefono: 
-                <input class="form-control" type="text" name="telefono" value="<?=$telefono?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                Correo: 
-                <input class="form-control" type="text" name="correo" value="<?=$correo?>">
-            </div>
-            <div class="col">
-                Usuario: 
-                <input class="form-control" type="text" name="usuario" value="<?=$usuario?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
             <br>    
             Tipo <br>
                 <input type="radio" name="tipo" value='1' required> Niño <br>
                 <input type="radio" name="tipo" value='2' required> Adulto <br>
-            </div>
-            <div class="col">
-                <br>
-                
-                Sexo: <br>
-                <input type="radio" name="sexo" value='1' required> Femenino <br>
-                <input type="radio" name="sexo" value='2' required> Masculino <br>
-                <input type="radio" name="sexo" value='3' required > Prefiero No Decirlo <br>
-
-                <!-- <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Masculino</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Femenino</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Prefiero no Decirlo</label>
-                </div> -->
             </div>
         </div>
         <br>

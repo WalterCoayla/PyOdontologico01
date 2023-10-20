@@ -2,7 +2,7 @@
 
 <a href="#" class="btn btn-success nuevo">
     <i class="fa fa-plus-circle"></i> 
-    Insertar Nuevooo
+    Agregar Paciente
 </a>
 
 <table class="table table-striped table-hover">
@@ -13,11 +13,9 @@
             <th>Apellido</th>
             <th>Dni</th>
             <th>Direccion</th>
-            <th>Fecha de Nac</th>
             <th>Telefono</th>
             <th>Correo</th>
             <th>Tipo</th>
-            <th>Sexo</th>
             
            
             <th colspan="2">Opciones</th>
@@ -33,11 +31,9 @@
             <td><?=$d['apellido']?></td>
             <td><?=$d['dni']?></td>
             <td><?=$d['direccion']?></td>
-            <td><?=$d['fecha_nacimiento']?></td>
             <td><?=$d['telefono']?></td> 
             <td><?=$d['correo']?></td> 
-            <td><?=$d['tipo']?></td> 
-            <td><?=$d['sexo']?></td> 
+            <td><?=$d['tipo']?></td>  
             
 
             <td>
