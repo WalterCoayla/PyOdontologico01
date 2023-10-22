@@ -92,7 +92,8 @@ class CtrlCita extends Controlador
         $data = [
             'titulo'=>'Mis Citas',
             'contenido'=>$contenido,
-            'msg'=>$msg
+            'msg'=>$msg,
+            'data'=>$respuesta['data']
         ];
 
         $this->mostrar('template.php',$data);

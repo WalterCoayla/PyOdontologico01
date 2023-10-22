@@ -1,8 +1,12 @@
-    <center><h1><?=$titulo?></h1></center>
+    <center><h1 id="titulo"><?=$titulo?></h1></center>
 
     <a href="#" class="btn btn-success nuevo">
         <i class="fa fa-plus-circle"></i> 
         Registrar nueva Cita
+    </a>
+    <a href="#" class="btn btn-success" id="imprimirPDF">
+        <i class="fa fa-plus-circle"></i> 
+       Imprimir
     </a>
     <h1>.</h1>
     <table class="table table-striped table-hover">
@@ -19,17 +23,19 @@
     <?php
     $i = 1;
         if (is_array($data))
-        foreach ($data as $d) { ?>
+        foreach ($data as $d) {
+            $item = $i++;
+        ?>
         <tr>
-            <td><?=$i++?></td>
+            <td><?=$item?></td>
             <td><?=$d['fecha']?></td>
             <td><?=$d['observaciones']?></td>
-            <td><?=$d['idestados']?></td>
-            <td><?=$d['idpaciente']?></td>
-            <td><?=$d['idpersonal']?></td>
+            <td><?=$d['NomEstado']?></td>
+            <td><?=$d['NomPaciente']?></td>
+            <td><?=$d['NomPersonal']?></td>
 
             <td>
-                <a data-id="<?=$d["idcitas"]?>" class="btn btn-danger download" href="#">
+                <a data-id="<?=$item?>" class="btn btn-danger imprimirCita" href="#">
                 <i class="fas fa-download fa-sm text-white-50"></i> Descargar </a>
 
                 <a data-id="<?=$d["idcitas"]?>" class="btn btn-success editar" href="#">

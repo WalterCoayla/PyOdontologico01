@@ -89,6 +89,8 @@ SELECT
     c.idcitas,
     c.fecha,
     c.observaciones,
+    c.idpaciente,
+    c.idpersonal,
     pl.nombre as NomPersonal,
     p.nombre as NomPaciente,
     e.nombre as NomEstado,

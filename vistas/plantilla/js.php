@@ -160,22 +160,12 @@
         $('#imprimirPDF').click(function (e) { 
             e.preventDefault();
             let link=$(this).html();
-            alert(link)
+            // alert(link)
             $(this).html('<i class="fa fa-spinner"></i> Descargando...');
             var datos= <?=json_encode(isset($data)?$data:'');?>;
             let titulo=$('#titulo').html();
-
-            /**
-             * Añadiendo imagenes
-             */
-             // var logo = new Image();
-
-            // logo.src = 'dist/img/prod-1.jpg';
-            // logo.src = 'recursos/images/logo.JPG';
-
-             /**
-              * Fin añadir imagen
-              */
+            
+            
             var doc = new jsPDF('p')
                  // doc.addImage(logo, 'JPEG', 10, 10,20,22);
 
@@ -184,21 +174,62 @@
                 doc.text(35, 25, titulo)
                 let columnas =[]
                 columnas.push( Object.keys(datos[0]) )
-
+                
                 let data = [] 
 
                 for (let i in datos) {
                     data.push( Object.values(datos[i]));
+                    
                 }
-
+                
             doc.autoTable({ 
                 head: columnas,
                 body: data,
                     margin:{top:40}
                 })
+                
             $('#imprimirPDF').html(link);
             doc.save(titulo)
             
+        });
+
+        $('.imprimirCita').click(function(){
+            var id= $(this).data('id');
+            let fecha;
+            let detalle;
+            let estado;
+            let paciente;
+            let doctor;
+           //  alert(id)
+            $('table tbody tr').each(function(){
+                      let item=$(this).children().eq(0);
+                      
+                      if (item.text() == id){
+                        
+                        fecha=$(this).children().eq(1);
+                        detalle=$(this).children().eq(2);
+                        estado=$(this).children().eq(3);
+                        paciente=$(this).children().eq(4);
+                        doctor=$(this).children().eq(5);
+                      } 
+                    });
+                    // alert(detalle.text())
+            var doc = new jsPDF('p')
+                 
+                doc.setFontSize(20)
+                doc.setTextColor(0, 0, 0) // Rojo
+                doc.text(35, 25, 'Citas')
+                doc.setFontSize(12)
+
+                doc.text(40, 40, 'Fecha de Atención: ' + fecha.text())
+                doc.text(40, 60, 'Tema de atención : ' +detalle.text())
+                doc.text(40, 80, 'Paciente : ' +paciente.text())
+                doc.text(40, 100, 'Doctor : ' +doctor.text())
+                doc.text(40, 120, 'Estado : ' +estado.text())
+
+
+                doc.save('citas.pdf')
+
         });
 
 $("#calendar").fullCalendar({

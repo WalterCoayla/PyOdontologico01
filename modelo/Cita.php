@@ -10,7 +10,8 @@ class Cita extends Modelo{
 
 
     private $_tabla = 'citas';
-    private $_vista = 'v_cita';
+    # private $_vista = 'v_cita';
+    private $_vista = 'v_cita01';
 
     public function __construct($id=null, $fecha=null
                                 , $paciente=null, $obs = null 
@@ -29,12 +30,12 @@ class Cita extends Modelo{
     public function listar(){
         return $this->getAll();
     }
-    public function getOne(){
+    /* public function getOne(){
         return $this->getBy('iddientes',$this->_id);
     }
     public function eliminar(){
         return $this->deleteBy('iddientes',$this->_id);
-    }
+    } */
 
     public function nuevo(){
         $datos = array(
