@@ -16,7 +16,7 @@
             <th>Detalle</th>
             <th>Estado</th>
             <th>Nombre Paciente</th>
-            <center><th>Atendido Por:</th></center>
+            <th>Atendido Por:</th>
            
             <th colspan="2">Opciones</th>
         </tr>
