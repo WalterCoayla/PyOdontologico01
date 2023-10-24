@@ -214,19 +214,19 @@
                       } 
                     });
                     // alert(detalle.text())
+            
             var doc = new jsPDF('p')
                 
                 doc.setFontSize(20)
                 doc.setTextColor(0, 0, 0) // Rojo
                 doc.text(35, 25, 'Citas')
-                doc.setFontSize(12)
-
+              
                 doc.text(40, 40, 'Fecha de Atención: ' + fecha.text())
                 doc.text(40, 60, 'Tema de atención : ' +detalle.text())
                 doc.text(40, 80, 'Paciente : ' +paciente.text())
                 doc.text(40, 100, 'Doctor : ' +doctor.text())
                 doc.text(40, 120, 'Estado : ' +estado.text())
-
+                
 
               doc.save('citas.pdf')
               //doc.autoPrint()

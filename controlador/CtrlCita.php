@@ -104,4 +104,27 @@ class CtrlCita extends Controlador
         }
 
     }
+    public function citasFull(){
+        
+        $obj= new Cita();
+
+        $respuesta = $obj->getCitas();
+
+        $msg = $respuesta['msg'];
+        # var_dump($respuesta);exit;
+        $datos = [
+                'titulo'=>"Citas",
+                'data'=>$respuesta['data']
+            ];
+        $contenido=$this->mostrar('citas/listarCitas.php',$datos,true);
+        $data = [
+            'titulo'=>'Citas',
+            'contenido'=>$contenido,
+            'data'=>$respuesta['data'],
+            'msg'=>$msg
+        ];
+
+        $this->mostrar('template.php',$data);
+
+    }
 }

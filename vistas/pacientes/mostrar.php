@@ -37,14 +37,13 @@
             
 
             <td>
-            <a data-id="<?=$d["idpersonas"]?>" class="editar" href="#">
-                    <i class="bi bi-pencil-square"></i> Editar </a>
-                
-                
-                / 
-                <a href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
-                    <i class="bi bi-trash"></i> Ver Historia</a>
-                </td>
+                <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#">
+                    <i class="fa-solid fa-pencil"></i> Editar </a>
+          
+                <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
+                    <i class="fa-solid fa-landmark"></i> Ver Historia </a>
+            </td>
+            
             </td>
             
         </tr>

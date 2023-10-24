@@ -45,7 +45,7 @@ class CtrlTrabajador extends Controlador{
             'CtrlCita&accion=citasPorPaciente'=>'Agendar Cita',
             'CtrlCita'=>'Calendario de Citas',
             'CtrlServicio'=>'Otros Servicios',
-            'CtrlPerfil'=>'Configuracion de Perfil',
+            'CtrlPerfil'=>'Mi Perfil',
         ];
         $data = [
             
@@ -60,10 +60,11 @@ class CtrlTrabajador extends Controlador{
             case 'DOCTOR':
                 $menu=[
                     
-                    "CtrlPersona"=>"Personas",
-                    "CtrlFormaPago"=>"Formas de Pago",
-                    "CtrlDiente"=>"Dientes",
+                    "CtrlPaciente"=>"Lista de Pacientes",
+                    "CtrlCita&accion=citasFull"=>"Mis Citas",
+                    "CtrlDiente"=>"Registro de Dientes",
                     "CtrlEstado_dental"=>"Estado Dental",
+                    "CtrlPerfil"=>"Mi Perfil",
 
                     ];
                 break;

@@ -15,6 +15,11 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
 # $titulo = ($editar==1)?'Editar Estado':'Nuevo Estado';
 
 ?>
+<style>
+    .titulo{
+        color: black;
+    }
+</style>
     
     <form action="?ctrl=CtrlPaciente&accion=guardar" method="post">
         id: <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
@@ -30,7 +35,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <div class="row">
             <div class="col">
                 Nombre: 
-                <input class="form-control" type="text" name="nombre" value="<?=$nombre?>" required>
+                <input class="form-control" type="text" name="nombre" value="<?=$nombre?>" >
             </div>
             <div class="col">
                 Apellido: 
@@ -40,7 +45,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <div class="row">
             <div class="col">
                 Dni:
-                <input type="text" class="form-control" name="dni" value="<?=$dni?>" required>
+                <input type="text" class="form-control" name="dni" value="<?=$dni?>" >
             </div>
             <div class="col">
                 Direccion: 
@@ -51,12 +56,21 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
             <div class="col">
             <br>    
             Tipo <br>
-                <input type="radio" name="tipo" value='1' required> Niño <br>
-                <input type="radio" name="tipo" value='2' required> Adulto <br>
+                <input type="radio" name="tipo" value='1' > Niño <br>
+                <input type="radio" name="tipo" value='2' > Adulto <br>
             </div>
         </div>
         <br>
-        <input class="form-control btn btn-success" type="submit" value="Guardar">
+        
+        <a class="btn btn-success col-5 mx-auto" type="submit" value="Guardar"> 
+            <i class="fa-solid fa-floppy-disk"></i> Guardar</a>
+          
+        <a class="btn btn-danger col-5 mx-auto" href="" type="submit" value="AgregarPaciente"> 
+            <i class="fa fa-plus-circle "> </i> Agregar Paciente  </a>
+        
+        <!--<input class=" btn btn-success " type="submit" value="Guardar">
+        <input class=" btn btn-success" type="submit" value="Guardar">-->
     </form>
 
-    <a href="?ctrl=CtrlTrabajador">Retornar</a>
+
+    <a class="titulo" href="?ctrl=CtrlTrabajador">Retornar</a>
