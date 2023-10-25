@@ -108,7 +108,7 @@ class CtrlCita extends Controlador
         
         $obj= new Cita();
 
-        $respuesta = $obj->getCitas();
+        $respuesta = $obj->TraerCitas();
 
         $msg = $respuesta['msg'];
         # var_dump($respuesta);exit;
