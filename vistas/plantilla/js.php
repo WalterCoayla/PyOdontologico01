@@ -214,21 +214,35 @@
                       } 
                     });
                     // alert(detalle.text())
+            
             var doc = new jsPDF('p')
-                 
+                
                 doc.setFontSize(20)
                 doc.setTextColor(0, 0, 0) // Rojo
                 doc.text(35, 25, 'Citas')
-                doc.setFontSize(12)
-
+              
                 doc.text(40, 40, 'Fecha de Atención: ' + fecha.text())
                 doc.text(40, 60, 'Tema de atención : ' +detalle.text())
                 doc.text(40, 80, 'Paciente : ' +paciente.text())
                 doc.text(40, 100, 'Doctor : ' +doctor.text())
                 doc.text(40, 120, 'Estado : ' +estado.text())
+                
 
+              doc.save('citas.pdf')
+              //doc.autoPrint()
+              /* global jsPDF 
+              // You'll need to make your image into a Data URL
+              // Use http://dataurl.net/#dataurlmaker
+              var imgData =
 
-                doc.save('citas.pdf')
+              var doc = new jsPDF();
+
+              doc.setFontSize(40);
+              doc.text("Octonyan loves jsPDF", 35, 25);
+              doc.addImage(imgData, "JPEG", 15, 40, 180, 180);
+
+              // Set the document to automatically print via JS
+              doc.autoPrint();*/
 
         });
 

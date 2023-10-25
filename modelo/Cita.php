@@ -21,7 +21,7 @@ class Cita extends Modelo{
         $this->_estado = $estado;
         $this->_fecha = $fecha;
         $this->_paciente = $paciente;
-        $this->_personal = 3;
+        $this->_personal = 4;
         $this->_observaciones = $obs;
 
         parent::__construct($this->_tabla);
@@ -41,9 +41,10 @@ class Cita extends Modelo{
         $datos = array(
             "fecha"=>"'$this->_fecha'",
             "observaciones"=>"'$this->_observaciones'",
+            "idestados"=>"'$this->_estado'",
             "idpaciente"=>"'$this->_paciente'",
             "idpersonal"=>"'$this->_personal'",
-            "idestados"=>"'$this->_estado'",
+            
         );
         return $this->insert($datos);
     }
@@ -56,7 +57,17 @@ class Cita extends Modelo{
 
         return $this->update($wh, $datos);
 
+
     }
+    public function TraerCitas(){
+        $hoy = getdate();
+        $sql = "Select * from v_cita01 ORDER BY fecha DESC LIMIT 0, 9 ";
+        # var_dump($sql);exit;
+        $this->_sql->setSQL($sql);
+
+        return $this->_bd->ejecutar($this->_sql);
+    }
+
     public function getCitas(){
         $hoy = getdate();
         $sql = "Select * from ". $this->_vista 
