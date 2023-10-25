@@ -128,7 +128,7 @@
     <script src='./assets/tools/bootstrap/bootstrap.js'></script>
     <script src='./assets/jquery-1.10.2.min.js'></script>-->
     <script src="./assets/js/jsPDF/jspdf.debug.js"></script>
-    <script src="./assets/js/jsPDF/jspdfAutoTable.min.js"></script>
+    <script src="./assets/js/jsPDF/jspdf.plugin.autotable3.1.1.min.js"></script>
 
 
     <?php require_once './vistas/plantilla/js.php'; ?>
