@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once './core/Controlador.php';
-require_once './modelo/Paciente.php';
+require_once './modelo/Persona.php';
 require_once './modelo/Paciente.php';
 
 class CtrlPaciente extends Controlador{
@@ -9,6 +9,14 @@ class CtrlPaciente extends Controlador{
         $this->listar();
     }
 
+    public function guardarPaciente(){
+        $id=$_POST['id'];
+        $tipo = $_POST['tipo'];
+        $obj= new Paciente;
+        $obj->guardarPaciente($id,$tipo);
+        $this->listar();
+
+    }
     public function guardar(){
         #Paciente
         $id=$_POST['id'];
@@ -86,6 +94,15 @@ class CtrlPaciente extends Controlador{
 
         $this->mostrar('template.php',$data);
 
+    }
+    public function buscarxDNI(){
+        $dni = $_GET['dni'];
+        $obj= new Persona();
+        $data = $obj->buscarXDni($dni);
+        if (is_null($data))
+            echo "0";
+        else
+            echo json_encode($data);
     }
 
     

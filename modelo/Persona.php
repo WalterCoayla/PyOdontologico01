@@ -136,5 +136,10 @@ class Persona extends Modelo{
 
         return $miClave;
     }
+    public function buscarXDni($dni){
+        $sql = "Select * from personas where dni='$dni'";
+        $this->setSql($sql);
+        return $this->ejecutarSql()['data'];
+    }
 
 }

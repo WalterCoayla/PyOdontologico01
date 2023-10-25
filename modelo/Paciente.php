@@ -53,6 +53,19 @@ class Paciente extends Persona{
         return $this->insert($datos);
 
     }
+    public function guardarPaciente($idPersona,$tipo){
+        # parent::nuevo();
+        $datos = [
+            'idpersonas'=>$idPersona,
+            'idtipo_paciente'=>"$tipo",
+        ];
+        # var_dump($datos);exit;
+        $this->setTabla('paciente');
+
+        return $this->insert($datos);
+
+    }
+    
     public function editar(){
          parent::editar();
         $datos = [
@@ -64,5 +77,6 @@ class Paciente extends Persona{
         return $this->update($wh,$datos);
 
     }
+    
     
 }

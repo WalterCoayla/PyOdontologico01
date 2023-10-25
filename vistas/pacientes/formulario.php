@@ -21,13 +21,13 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
     }
 </style>
     
-    <form action="?ctrl=CtrlPaciente&accion=guardar" method="post">
-        id: <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
+    <form action="?ctrl=CtrlPaciente&accion=guardarPaciente" method="post">
+        <input class="form-control" type="text" id="id" name="id" value="<?=$id?>" hidden>
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por DNI..."
-                aria-label="Search" aria-describedby="basic-addon2" id="txtBuscar">
+                aria-label="Search" aria-describedby="basic-addon2" id="txtDNI">
             <div class="input-group-append">
-                <button class="btn btn-success" type="submit">
+                <button class="btn btn-success" type="button" id="buscarDNI">
                     <i class="fas fa-search fa-sm"></i>
                 </button>
             </div>
@@ -35,42 +35,79 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <div class="row">
             <div class="col">
                 Nombre: 
-                <input class="form-control" type="text" name="nombre" value="<?=$nombre?>" >
+                <input class="form-control" id="nombre" type="text" name="nombre" value="<?=$nombre?>" required readonly >
             </div>
             <div class="col">
                 Apellido: 
-                <input class="form-control" type="text" name="apellido" value="<?=$apellido?>">
+                <input class="form-control" id="apellido" type="text" name="apellido" value="<?=$apellido?>"  required readonly>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 Dni:
-                <input type="text" class="form-control" name="dni" value="<?=$dni?>" >
+                <input type="text" class="form-control" id="dni" name="dni" value="<?=$dni?>"  required readonly>
             </div>
             <div class="col">
                 Direccion: 
-                <input type="text" class="form-control" name="direccion" value="<?=$direccion?>"> 
+                <input type="text" class="form-control" id="direccion" name="direccion" value="<?=$direccion?>"  required readonly> 
             </div>
         </div>
         <div class="row">
             <div class="col">
             <br>    
             Tipo <br>
-                <input type="radio" name="tipo" value='1' > Niño <br>
-                <input type="radio" name="tipo" value='2' > Adulto <br>
+                <input type="radio" name="tipo" value='1' required > Niño <br>
+                <input type="radio" name="tipo" value='2' required> Adulto <br>
             </div>
         </div>
         <br>
         
-        <a class="btn btn-success col-5 mx-auto" type="submit" value="Guardar"> 
-            <i class="fa-solid fa-floppy-disk"></i> Guardar</a>
+        <button class="btn btn-success col-5 mx-auto" type="submit"> 
+            <i class="fa-solid fa-floppy-disk"></i> Guardar</button>
           
-        <a class="btn btn-danger col-5 mx-auto" href="" type="submit" value="AgregarPaciente"> 
-            <i class="fa fa-plus-circle "> </i> Agregar Paciente  </a>
+        <a class="btn btn-danger col-5 mx-auto nuevo" href="#"> 
+            <i class="fa fa-plus-circle "> </i> 
+            Agregar Paciente  
+        </a>
+
         
         <!--<input class=" btn btn-success " type="submit" value="Guardar">
         <input class=" btn btn-success" type="submit" value="Guardar">-->
     </form>
-
-
+        
     <a class="titulo" href="?ctrl=CtrlTrabajador">Retornar</a>
+
+    <script>
+        $(function () {
+
+           $("#buscarDNI").click(function (e) { 
+            e.preventDefault();
+            
+            let dni = $('#txtDNI').val()
+
+           // alert('Buscando por DNI: ' + dni)
+           $.ajax({
+                    url:'index.php',
+                    type:'get',
+                    data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:'';?>','accion':'buscarxDNI','dni':dni}
+                }).done(function(datos){
+                    // let misDatos = datos
+                    /* $('#body-form').html(datos); */
+                    /* $('#modal-form').modal('show'); */
+                    //alert(datos)
+                    var misDatos =  JSON.parse(datos); 
+                    console.log(misDatos)
+                    $('#id').val(misDatos[0]['idpersonas'])
+                    $('#nombre').val(misDatos[0]['nombre'])
+                    $('#apellido').val(misDatos[0]['apellido'])
+                    $('#dni').val(misDatos[0]['dni'])
+                    $('#direccion').val(misDatos[0]['direccion'])                              
+
+                }).fail(function(){
+                    alert("error");
+                });
+
+           })
+
+        })
+    </script>
