@@ -63,12 +63,12 @@ class CtrlServicio extends Controlador
         $msg = $respuesta['msg'];
         # var_dump($respuesta);exit;
         $datos = [
-                'titulo'=>"Servicios de Dental",
+                'titulo'=>"Servicios Generales ",
                 'data'=>$respuesta['data']
             ];
         $contenido=$this->mostrar('servicios/mostrar.php',$datos,true);
         $data = [
-            'titulo'=>'Servicios de Dental',
+            'titulo'=>'Servicios Generales',
             'contenido'=>$contenido,
             'msg'=>$msg
         ];

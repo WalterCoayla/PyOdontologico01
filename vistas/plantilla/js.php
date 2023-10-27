@@ -73,6 +73,24 @@
                 alert("error");
             });
         });
+        $('.nuevoPersona').click( function(){ 
+            let linkNuevo=$(this).html();
+            // alert(linkNuevo)
+            $(this).html('<i class="fa fa-spinner"></i> Cargando...');
+            $('.modal-title').html('Nuevo Registro');
+            $.ajax({
+                url:'index.php',
+                type:'get',
+                data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:''?>','accion':'nuevoPersona'}
+            }).done(function(datos){
+                $('.nuevoPersona').html(linkNuevo);
+                $('#body-form').html(datos);
+                $('#modal-form').modal('show');
+            }).fail(function(){
+                $('.nuevoPersona').html(linkNuevo);
+                alert("error");
+            });
+        });
         $('.asignarCargo').click( function(e){ 
           e.preventDefault();
            let linkNuevo=$(this).html();

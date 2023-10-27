@@ -4,7 +4,17 @@
         <i class="fa fa-plus-circle"></i> 
         Insertar Nuevo
     </a>-->
-    
+<style>
+    .img{
+        width: 30vh;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+</style>
+
     <div class="row">
 
                         <div class="col-lg-6">
@@ -23,7 +33,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Limpieza de dientes</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,21 +51,20 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    Dropdown menus can be placed in the card header in order to extend the functionality
-                                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                                    icon in the card header can be clicked on in order to toggle a dropdown menu.
+                                    <img class = "img"
+                                    src="./assets/imagenes/imgservic/img01.png" alt="User profile picture"> <br>
+                                    Es una especialidad dentro de la odontología que combina en forma integral las áreas de prótesis fija, prótesis removible, operatoria, oclusión e implante dental, que realiza el diagnóstico y plan de tratamiento adecuado al paciente de alta complejidad que requiere recuperar su salud bucal a través de las técnicas más modernas de rehabilitación. A su vez, establece estrecha relación con las demás disciplinas de la odontología, como periodoncia, endodoncia y ortodoncia.
                                 </div>
                             </div>
 
                             <!-- Basic Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Ultrasonido</h6>
                                 </div>
                                 <div class="card-body">
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
+                                    Remoción de restos de comida y alimentos adheridos en la superficie de los dientes. 
+                                    La remoción de estos restos se realizan a traves de vibración de agua a presión.
                                 </div>
                             </div>
 
@@ -68,7 +77,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Diagnóstico:</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,9 +95,7 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    Dropdown menus can be placed in the card header in order to extend the functionality
-                                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                                    icon in the card header can be clicked on in order to toggle a dropdown menu.
+                                    Detección de caries o alteraciones buco-dentales que deban ser atendidas.
                                 </div>
                             </div>
 
@@ -97,14 +104,16 @@
                                 <!-- Card Header - Accordion -->
                                 <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
                                     role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                                    <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">
+                                        Cepillado dental:<br>
+                                        Aeropulidor con spray:
+                                    </h6>
                                 </a>
                                 <!-- Card Content - Collapse -->
                                 <div class="collapse show" id="collapseCardExample">
                                     <div class="card-body">
-                                        This is a collapsable card example using Bootstrap's built in collapse
-                                        functionality. <strong>Click on the card header</strong> to see the card body
-                                        collapse and expand!
+                                        - Una vez concluida la limpieza con ultrasonido, se realiza un cepillado dental.<br>
+                                        - Eliminación de manchas causadas por te, café, nicotina.
                                     </div>
                                 </div>
                             </div>

@@ -1,12 +1,8 @@
-<h1><?=$titulo?></h1>
+<center><h1><?=$titulo?></h1></center>
 
 <a href="#" class="btn btn-success nuevo">
     <i class="fa fa-plus-circle"></i> 
     Agregar Paciente
-</a>
-<a class="btn btn-danger nuevoPersona" href="#"> 
-            <i class="fa fa-plus-circle "> </i> 
-            Nuevo Paciente  
 </a>
 
 <table class="table table-striped table-hover">
@@ -42,11 +38,9 @@
 
             <td>
                 <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#">
-                    <i class="fa-solid fa-pencil"></i> Editar </a>
+                    <i class="fa-solid fa-pencil"></i> Editar 
+                </a>
           
-                <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
-                    <i class="fa-solid fa-landmark"></i> Historia </a>
-                
                 <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
                     <i class="fa-solid fa-landmark"></i> Prespuesto 
                 </a>

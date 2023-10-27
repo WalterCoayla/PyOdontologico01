@@ -1,10 +1,11 @@
 <?php
 session_start();
 require_once './core/Controlador.php';
+require_once './modelo/Presupuesto.php';
 require_once './modelo/Persona.php';
 require_once './modelo/Paciente.php';
 
-class CtrlPaciente extends Controlador{
+class CtrlPresupuesto extends Controlador{
     public function index(){
         $this->listar();
     }
@@ -79,19 +80,19 @@ class CtrlPaciente extends Controlador{
 
     public function listar(){
 
-        $obj= new Paciente();
+        $obj= new Presupuesto();
 
         $respuesta = $obj->listar();
 
         $msg = $respuesta['msg'];
         # var_dump($respuesta);exit;
         $datos = [
-                'titulo'=>"Paciente",
+                'titulo'=>"Nuevo Presupuesto",
                 'data'=>$respuesta['data']
             ];
-        $contenido=$this->mostrar('pacientes/mostrar.php',$datos,true);
+        $contenido=$this->mostrar('presupuesto/mostrar.php',$datos,true);
         $data = [
-            'titulo'=>'Paciente',
+            'titulo'=>'Nuevo Presupuesto',
             'contenido'=>$contenido,
             'msg'=>$msg
         ];
