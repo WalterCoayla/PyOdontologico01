@@ -31,7 +31,7 @@
             <td><?=$d['fecha']?></td>
             <td><?=$d['observaciones']?></td>
             <td><?=$d['NomEstado']?></td>
-            <td><?=$d['NomPaciente']?></td>
+            <td><?=$d['NomPaciente']?> <?=$d['ApePaciente']?></td>
             <td><?=$d['NomPersonal']?></td>
 
             <td>

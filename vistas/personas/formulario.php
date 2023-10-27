@@ -96,4 +96,4 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <input class="form-control btn btn-success" type="submit" value="Guardar">
     </form>
 
-    <a href="?ctrl=CtrlTrabajador">Retornar</a>
+    

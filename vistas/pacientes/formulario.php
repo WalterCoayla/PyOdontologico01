@@ -75,7 +75,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
         <input class=" btn btn-success" type="submit" value="Guardar">-->
     </form>
         
-    <a class="titulo" href="?ctrl=CtrlTrabajador">Retornar</a>
+    <a class="titulo" href="?ctrl=CtrlPaciente">Retornar</a>
 
     <script>
         $(function () {
@@ -95,19 +95,42 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
                     /* $('#body-form').html(datos); */
                     /* $('#modal-form').modal('show'); */
                     //alert(datos)
+                    if (datos!=0){
                     var misDatos =  JSON.parse(datos); 
                     console.log(misDatos)
                     $('#id').val(misDatos[0]['idpersonas'])
                     $('#nombre').val(misDatos[0]['nombre'])
                     $('#apellido').val(misDatos[0]['apellido'])
                     $('#dni').val(misDatos[0]['dni'])
-                    $('#direccion').val(misDatos[0]['direccion'])                              
+                    $('#direccion').val(misDatos[0]['direccion'])   
+                    } else {
+                        alert('DNI: '+ dni + '\n No Encontrado!!! \n\n Si desea puede agregar Nuevo Paciente')
+                    }                           
 
                 }).fail(function(){
                     alert("error");
                 });
 
-           })
+           });
+           $('.nuevoPersona').click( function(){ 
+            let linkNuevo=$(this).html();
+            let boton=$(this)
+            // alert(linkNuevo)
+            $(this).html('<i class="fa fa-spinner"></i> Cargando...');
+            $('.modal-titlePersona').html('Nuevo Registro');
+            $.ajax({
+                url:'index.php',
+                type:'get',
+                data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:''?>','accion':'nuevoPersona'}
+            }).done(function(datos){
+                 boton.html(linkNuevo);
+                $('#body-formPersona').html(datos);
+                $('#modal-formPersona').modal('show');
+            }).fail(function(){
+                 boton.html(linkNuevo);
+                alert("error");
+            });
+        });
 
         })
     </script>

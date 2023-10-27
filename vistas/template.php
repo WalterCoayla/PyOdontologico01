@@ -26,7 +26,8 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/estiloPer/aadminlte.css">
 
     <!-- Custom styles for this template-->
-    <link href="./assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="./assets/css/sb-admin-2.css" rel="stylesheet">
+    <script src="./assets/js/jquery/jquery.min.js"></script>
     <!--Link de Odontograma
     <link href="./assets/css/base.css" rel="stylesheet">
     <link href="./assets/tools/bootstrapp/css/bootstrap.css" rel="stylesheet">
@@ -109,7 +110,7 @@
 
     
     <!-- Bootstrap core JavaScript-->
-    <script src="./assets/js/jquery/jquery.min.js"></script>
+    
     <script src="./assets/js/jq-toast.min.js"></script>
     <!-- Toastr -->
     <script src="./assets/toastr/toastr.min.js"></script>

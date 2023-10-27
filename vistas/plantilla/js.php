@@ -75,19 +75,20 @@
         });
         $('.nuevoPersona').click( function(){ 
             let linkNuevo=$(this).html();
+            let boton=$(this)
             // alert(linkNuevo)
             $(this).html('<i class="fa fa-spinner"></i> Cargando...');
-            $('.modal-title').html('Nuevo Registro');
+            $('.modal-titlePersona').html('Nuevo Registro');
             $.ajax({
                 url:'index.php',
                 type:'get',
                 data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:''?>','accion':'nuevoPersona'}
             }).done(function(datos){
-                $('.nuevoPersona').html(linkNuevo);
-                $('#body-form').html(datos);
-                $('#modal-form').modal('show');
+                 boton.html(linkNuevo);
+                $('#body-formPersona').html(datos);
+                $('#modal-formPersona').modal('show');
             }).fail(function(){
-                $('.nuevoPersona').html(linkNuevo);
+                 boton.html(linkNuevo);
                 alert("error");
             });
         });
@@ -236,14 +237,32 @@
             var doc = new jsPDF('p')
                 
                 doc.setFontSize(20)
-                doc.setTextColor(0, 0, 0) // Rojo
-                doc.text(35, 25, 'Citas')
-              
-                doc.text(40, 40, 'Fecha de Atención: ' + fecha.text())
-                doc.text(40, 60, 'Tema de atención : ' +detalle.text())
-                doc.text(40, 80, 'Paciente : ' +paciente.text())
-                doc.text(40, 100, 'Doctor : ' +doctor.text())
-                doc.text(40, 120, 'Estado : ' +estado.text())
+                doc.setTextColor(0, 0, 255) // azul
+                doc.setFontType("bold")
+                doc.text(100, 25, 'Citas')
+
+                doc.setFontType("normal")
+                doc.setTextColor(0, 0, 0) 
+                doc.setFontSize(12)
+
+                /* doc.text(40, 40, 'Paciente : ')
+                doc.text(70, 40, paciente.text())
+ */
+                dibujaFila (doc, 40,40, 'Paciente : ',paciente.text())
+
+                dibujaFila (doc, 40,50, 'Fecha y hora: ',fecha.text())
+
+                /* doc.text(40, 50, 'Fecha y hora: ' )
+                doc.text(70, 50, fecha.text()) */
+                
+                doc.text(40, 60, 'Servicio : ' )
+                doc.text(70, 60, detalle.text())
+
+                doc.text(40, 70, 'Doctor : ')
+                doc.text(70, 70, doctor.text())
+
+                doc.text(40, 80, 'Estado : ')
+                doc.text(70, 80, estado.text())
                 
 
               doc.save('citas.pdf')
@@ -263,6 +282,17 @@
               doc.autoPrint();*/
 
         });
+        function dibujaFila(doc, x, y, titulo, texto){
+          doc.text(x, y, titulo)
+          doc.text(x+30, y, texto)
+          // Dibuja la lineas - Grilla
+          doc.line(x-4,y-4,x+150,y-4)
+          doc.line(x-4,y-4,x-4,y+3)
+
+          doc.line(x-4,y+3,x+150,y+3)
+          doc.line(x+150,y-4,x+150,y+3)
+
+        }
 
 $("#calendar").fullCalendar({
     header: {
