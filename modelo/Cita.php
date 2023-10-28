@@ -30,10 +30,10 @@ class Cita extends Modelo{
     public function listar(){
         return $this->getAll();
     }
-    /* public function getOne(){
-        return $this->getBy('iddientes',$this->_id);
+    public function getOne(){
+        return $this->getBy('idcitas',$this->_id);
     }
-    public function eliminar(){
+    /*public function eliminar(){
         return $this->deleteBy('iddientes',$this->_id);
     } */
 

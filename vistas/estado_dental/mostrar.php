@@ -40,7 +40,10 @@
 
     </table>
     <br>
-    <a href="?">Retornar</a>
+    <a class="btn btn-light" href="?">
+        <i class="fa-solid fa-rotate-left"></i>
+        Retornar
+    </a>
 
     <!-- Modal Formulario - Nuevo / Editar -->
 <div class="modal fade" id="modal-form" role="dialog">

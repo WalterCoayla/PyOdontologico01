@@ -24,7 +24,7 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
     <form action="?ctrl=CtrlPaciente&accion=guardarPaciente" method="post">
         <input class="form-control" type="text" id="id" name="id" value="<?=$id?>" hidden>
         <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por DNI..."
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
                 aria-label="Search" aria-describedby="basic-addon2" id="txtDNI">
             <div class="input-group-append">
                 <button class="btn btn-success" type="button" id="buscarDNI">
@@ -32,43 +32,41 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
                 </button>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                Nombre: 
-                <input class="form-control" id="nombre" type="text" name="nombre" value="<?=$nombre?>" required readonly >
-            </div>
-            <div class="col">
-                Apellido: 
-                <input class="form-control" id="apellido" type="text" name="apellido" value="<?=$apellido?>"  required readonly>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                Dni:
-                <input type="text" class="form-control" id="dni" name="dni" value="<?=$dni?>"  required readonly>
-            </div>
-            <div class="col">
-                Direccion: 
-                <input type="text" class="form-control" id="direccion" name="direccion" value="<?=$direccion?>"  required readonly> 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <br>    
-            Tipo <br>
-                <input type="radio" name="tipo" value='1' required > Niño <br>
-                <input type="radio" name="tipo" value='2' required> Adulto <br>
-            </div>
-        </div>
-        <br>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Detalle</th>
+                <th>Precio S/.</th>
+                
+            </tr>
+        </thead>
+    <tbody>
+    <?php
+        if (is_array($data))
+        foreach ($data as $d) { ?>
+        <tr>
+            <td><?=$d['idpersonas']?></td>
+            <td><?=$d['nombre']?></td>
+            <td><?=$d['apellido']?></td> 
+            
+            </td>
+            
+        </tr>
+    
+    <?php    }
+    ?>
+    </tbody> 
+
+    </table>
         
-        <button class="btn btn-success col-5 mx-auto" type="submit"> 
+        <button class="form-control btn btn-success" type="submit"> 
             <i class="fa-solid fa-floppy-disk"></i> Guardar</button>
           
-        <a class="btn btn-danger col-5 mx-auto nuevoPersona" href="#"> 
+        <!--<a class="btn btn-danger col-5 mx-auto nuevoPersona" href="#"> 
             <i class="fa fa-plus-circle "> </i> 
             Nuevo Paciente  
-        </a>
+        </a>-->
 
         
         <!--<input class=" btn btn-success " type="submit" value="Guardar">
@@ -108,6 +106,25 @@ $editar = ($id != '')?1:0;  # 1: Editar / 0: Nuevo
                 });
 
            })
+           $('.nuevoPresupuesto').click( function(){ 
+            let linkNuevo=$(this).html();
+            let boton=$(this)
+            // alert(linkNuevo)
+            $(this).html('<i class="fa fa-spinner"></i> Cargando...');
+            $('.modal-titlePersona').html('Nuevo Presupuesto');
+            $.ajax({
+                url:'index.php',
+                type:'get',
+                data:{'ctrl':'<?=isset($_GET['ctrl'])?$_GET['ctrl']:''?>','accion':'nuevoPresupuesto'}
+            }).done(function(datos){
+                 boton.html(linkNuevo);
+                $('#body-formPersona').html(datos);
+                $('#modal-formPersona').modal('show');
+            }).fail(function(){
+                 boton.html(linkNuevo);
+                alert("error");
+            });
+        });
 
         })
     </script>

@@ -97,6 +97,27 @@ class CtrlPaciente extends Controlador{
         ];
 
         $this->mostrar('template.php',$data);
+    }
+    public function listar01(){
+
+        $obj= new Paciente();
+
+        $respuesta = $obj->listar01();
+
+        $msg = $respuesta['msg'];
+        var_dump($respuesta);exit;
+        $datos = [
+                'titulo'=>"Paciente",
+                'data'=>$respuesta['data']
+            ];
+        $contenido=$this->mostrar('pacientes/excel.php',$datos,true);
+        $data = [
+            'titulo'=>'Paciente',
+            'contenido'=>$contenido,
+            'msg'=>$msg
+        ];
+
+        $this->mostrar('template.php',$data);
 
     }
     public function buscarxDNI(){

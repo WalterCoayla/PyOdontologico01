@@ -1,9 +1,8 @@
 <center><h1><?=$titulo?></h1></center>
-
-<a href="#" class="btn btn-success nuevo">
-    <i class="fa fa-plus-circle"></i> 
-    Agregar Paciente
-</a>
+    <a href="#" class="btn btn-success nuevo">
+        <i class="fa-regular fa-credit-card"></i> 
+        Nuevo Prespuesto
+    </a>
 
 <table class="table table-striped table-hover">
     <thead>
@@ -37,12 +36,12 @@
             
 
             <td>
-                <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#">
-                    <i class="fa-solid fa-pencil"></i> Editar 
+                <a data-id="<?=$d["idpersonas"]?>" class="btn btn-primary editar" href="#" title="Editar">
+                    <i class="fa-solid fa-pencil"></i>  
                 </a>
           
-                <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
-                    <i class="fa-solid fa-landmark"></i> Prespuesto 
+                <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>" title="Eliminar">
+                    <i class="fa fa-trash"></i>  
                 </a>
             </td>
             
@@ -56,7 +55,10 @@
 
     </table>
     <br>
-    <a href="?">Retornar</a>
+    <a class="btn btn-light" href="?">
+        <i class="fa-solid fa-rotate-left"></i>
+        Retornar
+    </a>
 
 <!-- Modal Formulario - Nuevo / Editar -->
 <div class="modal fade" id="modal-form" role="dialog">

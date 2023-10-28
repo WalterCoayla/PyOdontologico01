@@ -252,17 +252,23 @@
 
                 dibujaFila (doc, 40,50, 'Fecha y hora: ',fecha.text())
 
+                dibujaFila (doc, 40,60, 'Servicio : ',detalle.text())
+
+                dibujaFila (doc, 40,70, 'Doctor : ',doctor.text())
+
+                dibujaFila (doc, 40,80, 'Estado : ',estado.text())
+
                 /* doc.text(40, 50, 'Fecha y hora: ' )
                 doc.text(70, 50, fecha.text()) */
                 
-                doc.text(40, 60, 'Servicio : ' )
+                /*doc.text(40, 60, 'Servicio : ' )
                 doc.text(70, 60, detalle.text())
 
                 doc.text(40, 70, 'Doctor : ')
                 doc.text(70, 70, doctor.text())
 
                 doc.text(40, 80, 'Estado : ')
-                doc.text(70, 80, estado.text())
+                doc.text(70, 80, estado.text())*/
                 
 
               doc.save('citas.pdf')
@@ -291,6 +297,8 @@
 
           doc.line(x-4,y+3,x+150,y+3)
           doc.line(x+150,y-4,x+150,y+3)
+
+
 
         }
 

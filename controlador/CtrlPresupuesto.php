@@ -71,7 +71,7 @@ class CtrlPresupuesto extends Controlador{
 
     }
     public function nuevo(){
-        $this->mostrar('pacientes/formulario.php');
+        $this->mostrar('presupuesto/formulario.php');
     }
     public function nuevoPersona(){
         

@@ -29,6 +29,10 @@ class Paciente extends Persona{
         $this->setTabla($this->_vista);
         return $this->getAll();
     }
+    public function listar01(){
+        $this->setTabla($this->_vista);
+        return $this->getAll();
+    }
     public function getOne(){
         $this->setTabla($this->_vista);
         return $this->getBy('idpersonas',$this->_id);

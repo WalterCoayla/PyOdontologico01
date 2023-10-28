@@ -4,10 +4,20 @@
     <i class="fa fa-plus-circle"></i> 
     Agregar Paciente
 </a>
+
 <a class="btn btn-danger nuevoPersona" href="#"> 
-            <i class="fa fa-plus-circle "> </i> 
-            Nuevo Paciente  
+    <i class="fa fa-plus-circle "> </i> 
+    Nuevo Paciente  
 </a>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  
+    <a class="btn btn-success" href="./vistas/pacientes/excel.php"> 
+        <i class="fa fa-plus-circle "> </i> 
+        Descargar en Excel  
+    </a>
+
+</div>
 
 <table class="table table-striped table-hover">
     <thead>
@@ -26,43 +36,43 @@
         </tr>
     </thead>
     <tbody>
-    <?php
-        if (is_array($data))
-        foreach ($data as $d) { ?>
-        <tr>
-            <td><?=$d['idpersonas']?></td>
-            <td><?=$d['nombre']?></td>
-            <td><?=$d['apellido']?></td>
-            <td><?=$d['dni']?></td>
-            <td><?=$d['direccion']?></td>
-            <td><?=$d['telefono']?></td> 
-            <td><?=$d['correo']?></td> 
-            <td><?=$d['tipo']?></td>  
-            
-
-            <td>
-                <a data-id="<?=$d["idpersonas"]?>" class="btn btn-success editar" href="#">
-                    <i class="fa-solid fa-pencil"></i> Editar </a>
-          
-                <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
-                    <i class="fa-solid fa-landmark"></i> Historia </a>
+        <?php
+            if (is_array($data))
+            foreach ($data as $d) { ?>
+            <tr>
+                <td><?=$d['idpersonas']?></td>
+                <td><?=$d['nombre']?></td>
+                <td><?=$d['apellido']?></td>
+                <td><?=$d['dni']?></td>
+                <td><?=$d['direccion']?></td>
+                <td><?=$d['telefono']?></td> 
+                <td><?=$d['correo']?></td> 
+                <td><?=$d['tipo']?></td>  
                 
-                <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
-                    <i class="fa-solid fa-landmark"></i> Prespuesto 
-                </a>
-            </td>
+
+                <td>
+                    <a data-id="<?=$d["idpersonas"]?>" class="btn btn-primary editar" href="#">
+                        <i class="fa-solid fa-pencil"></i> Editar </a>
             
-            </td>
-            
-        </tr>
-    
-    <?php    }
-    ?>
+                    <a class="btn btn-danger" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
+                        <i class="fa-solid fa-landmark"></i> Historia </a>
+                    
+                    <a class="btn btn-warning" href="?ctrl=CtrlHistorias&id=<?=$d["idpersonas"]?>">
+                        <i class="fa-regular fa-credit-card"></i> Prespuesto
+                    </a>
+                </td>
+                
+            </tr>
+        
+        <?php } ?>
     </tbody> 
 
     </table>
     <br>
-    <a href="?">Retornar</a>
+    <a class="btn btn-light" href="?">
+        <i class="fa-solid fa-rotate-left"></i>
+        Retornar
+    </a>
 
 <!-- Modal Formulario - Nuevo / Editar -->
 <div class="modal fade" id="modal-form" role="dialog">
